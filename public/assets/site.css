@@ -40,7 +40,26 @@
   --lime: #b6ff3c;
   --yellow: #ffd23f;
   --violet: #8b5cff;
-  --grad: linear-gradient(100deg, var(--cyan), var(--violet) 52%, var(--magenta));
+  /* brushed steel, lit from below so the shine runs upwards */
+  --steel-1: #59636f;
+  --steel-2: #93a0b0;
+  --steel-3: #d6e0ea;
+  --steel-4: #fbfdff;
+  --grad: linear-gradient(to top,
+      #4f5a67 0%,
+      #8e9cad 34%,
+      #d3dee9 55%,
+      #fbfdff 70%,
+      #cfdae6 82%,
+      #86939f 100%);
+  /* the same metal, but bright enough to read as text */
+  --grad-text: linear-gradient(to top,
+      #8d9eb2 0%,
+      #d9e5f1 16%,
+      #ffffff 40%,
+      #fbfdff 54%,
+      #d7e2ee 76%,
+      #a3b3c6 100%);
   --radius: 14px;
   --radius-lg: 22px;
   --shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.85);
@@ -76,7 +95,7 @@ body::before {
   background:
     radial-gradient(900px 520px at 78% -6%, rgba(34, 227, 255, 0.13), transparent 62%),
     radial-gradient(760px 480px at 12% 4%, rgba(139, 92, 255, 0.16), transparent 66%),
-    radial-gradient(900px 700px at 50% 110%, rgba(255, 63, 180, 0.08), transparent 60%),
+    radial-gradient(900px 700px at 50% 110%, rgba(150, 172, 196, 0.09), transparent 60%),
     var(--bg);
 }
 
@@ -209,9 +228,9 @@ p { margin: 0; }
   border-color: transparent;
   color: #051021;
   font-weight: 600;
-  box-shadow: 0 10px 30px -12px rgba(34, 227, 255, 0.65);
+  box-shadow: 0 10px 28px -14px rgba(196, 214, 232, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.55);
 }
-.btn--primary:hover { color: #051021; box-shadow: 0 16px 40px -14px rgba(255, 63, 180, 0.7); }
+.btn--primary:hover { color: #051021; box-shadow: 0 18px 42px -16px rgba(210, 226, 242, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.8); }
 .btn--ghost { background: rgba(18, 27, 61, 0.6); }
 .btn svg { width: 16px; height: 16px; flex: none; }
 .btn--sm { padding: 9px 15px; font-size: 0.78rem; }
@@ -289,7 +308,7 @@ p { margin: 0; }
   max-width: min(17ch, 100%);
 }
 .hero h1 .grad {
-  background: var(--grad);
+  background: var(--grad-text);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
