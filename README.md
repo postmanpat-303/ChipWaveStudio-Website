@@ -10,6 +10,7 @@ public/            the whole site (this is what gets published)
   index.html       the landing page
   assets/site.css  styles
   assets/site.js   menu, lightbox, reveal animations
+  assets/glow.js   the pointer glow trail (canvas, no libraries)
   assets/shots/    screenshots converted to WebP (1600 and 800 wide)
   assets/marketing/ composed artwork (the collage), also WebP
   assets/video/    the 0.2.16.0 promo, served from this site
