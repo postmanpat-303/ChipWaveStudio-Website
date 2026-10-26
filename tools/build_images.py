@@ -51,6 +51,8 @@ SHOT_SET = {
     "palettes": SHOTS / "theme-palettes.png",
     "drop": UNIFIED / "03-launcher-to-timeline-drag-1920x1080.png",
     "layout-1366": UNIFIED / "01-default-layout-REAL-1366x768.png",
+    "about-rain": SHOTS / "about-digital-rain.png",
+    "help-menu": SHOTS / "help-user-manual.png",
     "slate-timeline": SHOTS / "timeline-selected-slate.png",
     "dark-timeline": SHOTS / "dark-timeline.png",
     "amiga-timeline-2": SHOTS / "amiga-timeline.png",

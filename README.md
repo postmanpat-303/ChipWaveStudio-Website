@@ -12,7 +12,7 @@ public/            the whole site (this is what gets published)
   assets/site.js   menu, lightbox, reveal animations
   assets/shots/    screenshots converted to WebP (1600 and 800 wide)
   assets/marketing/ composed artwork (the collage), also WebP
-  assets/video/    the 0.2.16.0 promo, served from this site
+  assets/video/    the promo film, served from this site
   assets/fonts/    Atkinson Hyperlegible Next + Mono (OFL 1.1)
   manual/          the user manual: the PDF plus index.html, the reader page
   404.html  robots.txt  sitemap.xml
@@ -75,7 +75,7 @@ stops it.
 
 ## Content notes
 
-- Version, download URLs, sizes and the “new in” section are for **0.2.16.0**.
+- Version, download URLs, sizes and the “new in” section are for **0.2.17.0**.
   Download links use `releases/latest/download/...`, so they follow new releases;
   the version text and the new-in cards need a manual edit per release.
 - Every claim on the page comes from the app's README, docs and source
@@ -87,7 +87,7 @@ stops it.
   with `Windows.Data.Pdf`, see the commit log), rebuild the cover WebPs and update the
   page count, file size and version on the home page and in `manual/index.html`.
 - The cicada in the header, footer, hero and social card is `media-src/cicada-source.png`, re-inked by `build_images.py` into white line art for the dark page.
-- The promo in `public/assets/video/` is the 62 MB 0.2.16.0 MP4 from the media
+- The promo in `public/assets/video/` is the 62 MB MP4 from the media
   folder. It is committed so every deploy carries it; `preload="none"` means a
   visitor only downloads it after pressing play. Compress it before swapping in a
   longer video, and keep `poster="/assets/shots/promo-960.webp"`.
