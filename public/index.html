@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ChipWave Studio — a free music sequencer and DAW with a retro heart</title>
+<meta name="description" content="ChipWave Studio is a free, open-source music sequencer for Windows, macOS and Linux. Arrange clips on a timeline, write melodies in the piano roll, program beats, and shape your own sounds with WaveForge, StringWave, FM-4 and Chip FX. GPL-3.0, no subscription.">
+<link rel="canonical" href="https://chipwavestudio.com/">
+<meta name="theme-color" content="#070b1c">
+<meta name="color-scheme" content="dark">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ChipWave Studio">
+<meta property="og:title" content="ChipWave Studio — a free music sequencer with a retro heart">
+<meta property="og:description" content="A complete music studio for Windows, macOS and Linux. Timeline, piano roll, drum kit, synths, tracker and export — free and open source (GPL-3.0).">
+<meta property="og:url" content="https://chipwavestudio.com/">
+<meta property="og:image" content="https://chipwavestudio.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ChipWave Studio — a free music sequencer with a retro heart">
+<meta name="twitter:description" content="Timeline, piano roll, drum kit, synths, tracker and export. Free and open source for Windows, macOS and Linux.">
+<meta name="twitter:image" content="https://chipwavestudio.com/assets/og-image.jpg">
+
+<link rel="icon" href="/assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/icon-256.png" sizes="256x256" type="image/png">
+<link rel="apple-touch-icon" href="/assets/icon-180.png">
+<link rel="preload" href="/assets/shots/timeline-1600.webp" as="image" type="image/webp" fetchpriority="high">
+<link rel="stylesheet" href="/assets/site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ChipWave Studio",
+  "alternateName": "ChipWave Tracker",
+  "applicationCategory": "MultimediaApplication",
+  "applicationSubCategory": "Digital audio workstation",
+  "operatingSystem": "Windows 10+, macOS 11+, Linux",
+  "softwareVersion": "0.2.16.0",
+  "datePublished": "2024-01-01",
+  "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "url": "https://chipwavestudio.com/",
+  "downloadUrl": "https://github.com/postmanpat-303/ChipWaveStudio/releases/latest",
+  "codeRepository": "https://github.com/postmanpat-303/ChipWaveStudio",
+  "image": "https://chipwavestudio.com/assets/og-image.jpg",
+  "author": { "@type": "Person", "name": "Del (postmanpat)" },
+  "description": "Free and open-source music sequencer and DAW: timeline, piano roll, drum kit, step sequencer, tracker, synths and effects, CLAP and VST3 plugins, WAV and MP3 export."
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header" id="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="ChipWave Studio home">
+      <img src="/assets/icon-32.png" alt="" width="30" height="30">
+      <span><b>ChipWave</b> <em>Studio</em></span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Sections">
+      <a href="#new">What's new</a>
+      <a href="#features">Features</a>
+      <a href="#instruments">Sounds</a>
+      <a href="#themes">Themes</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="#docs">Docs</a>
+    </nav>
+
+    <div class="header-cta">
+      <a class="btn btn--ghost btn--sm" href="https://github.com/postmanpat-303/ChipWaveStudio" rel="noopener">Source</a>
+      <a class="btn btn--primary btn--sm" href="#download">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
+        Download free
+      </a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <a class="pill" href="https://github.com/postmanpat-303/ChipWaveStudio/releases/latest" rel="noopener">
+        <span class="dot" aria-hidden="true"></span>
+        <b>v0.2.16.0</b> released · free &amp; open source
+      </a>
+
+      <h1>A <span class="grad">free music sequencer</span> with a retro heart.</h1>
+
+      <p class="hero-sub">
+        ChipWave Studio is a complete music studio for <strong>Windows, macOS and Linux</strong>: lay clips out
+        on a timeline, write melodies in the piano roll, program beats in the drum kit, and forge your own
+        sounds with WaveForge, StringWave, FM-4, Analog and Chip FX. No subscription, no account, no limits.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn--primary" href="#download">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
+          Download for Windows
+        </a>
+        <a class="btn" href="#features">Take the tour</a>
+      </div>
+
+      <p class="hero-note">
+        GPL-3.0 · no account · no telemetry · renders WAV &amp; MP3 ·
+        <a href="#download">macOS and Linux too</a>
+      </p>
+
+      <figure class="hero-shot">
+        <div class="frame">
+          <img src="/assets/shots/timeline-1600.webp" width="1600" height="900" fetchpriority="high" decoding="async"
+               alt="ChipWave Studio's Timeline playing the built-in demo Oceans 11: eleven tracks of named, coloured clips under Intro, Verse, Chorus, Bridge, Breakdown and Outro markers, with the Clip Arranger and master meters on the left and the piano roll below.">
+        </div>
+        <figcaption>The Timeline, the Clip Arranger and the piano roll — a real capture of the built-in “Oceans 11” demo.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true">
+    <div class="strip-track">
+      <span>Windows <i>·</i> macOS <i>·</i> Linux <i>·</i> 32 tracks <i>·</i> piano roll <i>·</i> drum kit <i>·</i> WaveForge <i>·</i> StringWave <i>·</i> FM-4 <i>·</i> Chip FX <i>·</i> Voice <i>·</i> tracker <i>·</i> CLAP &amp; VST3 <i>·</i> MIDI <i>·</i> WAV &amp; MP3 <i>·</i> GPL-3.0</span>
+      <span>Windows <i>·</i> macOS <i>·</i> Linux <i>·</i> 32 tracks <i>·</i> piano roll <i>·</i> drum kit <i>·</i> WaveForge <i>·</i> StringWave <i>·</i> FM-4 <i>·</i> Chip FX <i>·</i> Voice <i>·</i> tracker <i>·</i> CLAP &amp; VST3 <i>·</i> MIDI <i>·</i> WAV &amp; MP3 <i>·</i> GPL-3.0</span>
+    </div>
+  </div>
+
+  <section id="new">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">New in 0.2.16.0</span>
+        <h2>Your knobs, your words, your undo.</h2>
+        <p>Three things that make the studio feel more like yours: controller maps you can keep, an Undo menu that says what it will undo, and a top display with a backlight glow and a glassy shine.</p>
+      </div>
+
+      <div class="new-grid">
+        <article class="card reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 10v4M11 10v4M15 10v4M19 10v4"/></svg>
+          <span class="tag">Midi</span>
+          <h3>Save and load controller maps</h3>
+          <p>Keep the knobs you have MIDI-learned as a small file for your keyboard or controller, then put them back whenever you like.</p>
+        </article>
+        <article class="card reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h9a4 4 0 010 8H7m0 0l3-3m-3 3l3 3"/></svg>
+          <span class="tag">Workflow</span>
+          <h3>Undo that names the step</h3>
+          <p>The Edit menu reads <em>Undo: Move clip</em> or <em>Redo: Add note</em> for the most common edits, so you know before you click.</p>
+        </article>
+        <article class="card reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="11" rx="2"/><path d="M8 20h8M7 9h10"/></svg>
+          <span class="tag">Look</span>
+          <h3>A display that glows</h3>
+          <p>The top LCD gets a soft backlight glow and a glassy shine in every display colour — Mint, Amber, Ice and the rest.</p>
+        </article>
+      </div>
+
+      <div class="new-showcase">
+        <figure class="reveal new-showcase-wide">
+          <img src="/assets/shots/glow-1600.webp" width="1600" height="331" loading="lazy" decoding="async"
+               alt="The top display in three backlight colours: Mint, Amber and Ice, each with the new glow and glass shine.">
+          <figcaption>Glow and shine, in Mint, Amber and Ice</figcaption>
+        </figure>
+        <figure class="reveal new-showcase-narrow">
+          <img src="/assets/shots/controller-map-1600.webp" width="1600" height="900" loading="lazy" decoding="async"
+               alt="The MIDI settings card in the Amiga theme, listing three learned controls with Save controller map and Load controller map buttons beneath.">
+          <figcaption>Controller maps: save the knobs you learned</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Features</span>
+        <h2>Everything a song needs, in one window.</h2>
+        <p>Arrange like a DAW, write like a sequencer, program like a tracker. ChipWave gives you the timeline, the notes, the drums, the sounds and the mix — with no project files to fight.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-copy reveal">
+          <span class="kicker">Arrange</span>
+          <h3>Timeline and clip launcher</h3>
+          <p>Drag clips across tracks, loop one clip with a double-click, split, copy and paste. Scenes in the Clip Arranger launch on the next bar, so you can try a whole arrangement without leaving the window.</p>
+          <ul>
+            <li><strong>Up to 32 tracks</strong> per song, each with its own colour and role</li>
+            <li><strong>Loop, follow actions and Capture</strong> turn a jam into a timeline</li>
+            <li><strong>Automation lanes</strong> for filters, levels, delay feedback and any knob</li>
+          </ul>
+        </div>
+        <div class="feature-shot reveal">
+          <img src="/assets/shots/launcher-1600.webp" width="1600" height="900" loading="lazy" decoding="async"
+               alt="The Timeline with the Clip Arranger open on the left, showing scenes and launcher clips above the drum kit's step sequencer."
+               data-caption="Clip Arranger and Timeline: scenes launch on the next bar while the song plays.">
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-copy reveal">
+          <span class="kicker">Write</span>
+          <h3>Piano roll, drums and honest chords</h3>
+          <p>Draw notes with velocity, pressure, chance and step conditions. The Drum Kit's step sequencer has swing, 16 to 64 steps and a groove generator, and the chord helper writes real notes to the timeline — one Ctrl+Z and it's yours.</p>
+          <ul>
+            <li><strong>Round Robin</strong>: clip variations that differ each pass but render the same</li>
+            <li><strong>Chords, Melody and Bass</strong> generators with a WRITE card that says where the notes go</li>
+            <li><strong>Scale lock</strong> for typing and MIDI, with key detection</li>
+          </ul>
+        </div>
+        <div class="feature-shot reveal">
+          <img src="/assets/shots/variations-1600.webp" width="1600" height="900" loading="lazy" decoding="async"
+               alt="The piano roll with take tabs A, B and C and the Variations popover set to Random no repeat, previewing the first sixteen passes."
+               data-caption="Clip Variations: a different take on every loop pass, always the same render.">
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-copy reveal">
+          <span class="kicker">Sound</span>
+          <h3>A rack for every track</h3>
+          <p>The Rack is the instrument and its effects in one row under the Timeline. Stack layers, split the keyboard into parallel paths, nest devices, save the result as your own rack and pull it back from the Browser.</p>
+          <ul>
+            <li><strong>Add Device</strong> from a tree, drag to reorder, Ctrl-drag to copy</li>
+            <li><strong>Splits and layers</strong> with level, pan, transpose and key range</li>
+            <li><strong>Save Custom Rack</strong>, then find it in Browser › My Racks</li>
+          </ul>
+        </div>
+        <div class="feature-shot reveal">
+          <img src="/assets/shots/racks-1600.webp" width="1600" height="900" loading="lazy" decoding="async"
+               alt="The Rack view showing a two-layer rack where one layer is split into two parallel paths with drive and delay, plus the master panel."
+               data-caption="The Rack and the chain editor: layers, splits and effects in one tree.">
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-copy reveal">
+          <span class="kicker">Mix</span>
+          <h3>Mixer, ducking and a true-peak limiter</h3>
+          <p>Per-channel fader, pan, mute, solo and peak meters, two send/return buses, and sidechain ducking with a Duck % per channel for the classic trance pump. The master limiter is a lookahead true-peak design, and the loudness meter reads LUFS the way the standards do.</p>
+          <ul>
+            <li><strong>Momentary, short-term and integrated LUFS</strong> plus true peak (ITU-R BS.1770)</li>
+            <li><strong>Every export</strong> goes through the same limiter</li>
+            <li><strong>WAV and MP3</strong> with ID3 tags, whole song or one block</li>
+          </ul>
+        </div>
+        <div class="feature-shot reveal">
+          <img src="/assets/shots/mixer-1600.webp" width="1600" height="900" loading="lazy" decoding="async"
+               alt="The mixer with channel strips, send returns and the pinned Master panel showing the limiter and a LUFS loudness reading."
+               data-caption="The Mixer, with the limiter and loudness panel pinned on the right.">
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-copy reveal">
+          <span class="kicker">Classic</span>
+          <h3>The Tracker is still there</h3>
+          <p>For those who love the old way: OctaMED-style blocks, note and effect columns, the Z–M keyboard, selection, transpose and undo. Effects cover slides, decays, tempo, filter and acid lines; the cursor follows the playing row.</p>
+          <ul>
+            <li><strong>64-row blocks</strong> by default, any length you like, with named Undo steps</li>
+            <li><strong>32 channels</strong> with a bar that says which ones you are looking at</li>
+            <li><strong>303 glide and accent</strong> (<kbd>3C</kbd> / <kbd>3D</kbd>), plus Voice and generator effects</li>
+          </ul>
+        </div>
+        <div class="feature-shot reveal">
+          <img src="/assets/shots/tracker-1600.webp" width="1600" height="900" loading="lazy" decoding="async"
+               alt="The Tracker playing the Velvet Mirrorball disco demo, with the Cyber Choir voice open in the instrument editor below."
+               data-caption="The Tracker with an instrument open underneath — a real capture, mid-playback.">
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-copy reveal">
+          <span class="kicker">Find</span>
+          <h3>A Browser that knows everything</h3>
+          <p>Instruments, CLAP and VST3 plugins, samples, songs, presets, Grid patches and wavetables in one searchable panel with tags, filters, favourites and ratings. Drag a sound onto a track header to give that track the sound, or below the last track to make a new one.</p>
+          <ul>
+            <li><strong>Find plugins</strong> on the first run, or any time in Settings</li>
+            <li><strong>Double-click to load</strong>, drag to assign, audition as you go</li>
+            <li><strong>Chop and slice</strong> a break into instruments, or straight into notes</li>
+          </ul>
+        </div>
+        <div class="feature-shot reveal">
+          <img src="/assets/shots/browser-1600.webp" width="1600" height="900" loading="lazy" decoding="async"
+               alt="The Browser docked on the right of the Timeline: category tabs, a search field, tag chips, filter columns and rated results."
+               data-caption="The Browser: instruments, plugins, samples and songs in one place.">
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-copy reveal">
+          <span class="kicker">Plugins</span>
+          <h3>CLAP and VST3, hosted properly</h3>
+          <p>Surge XT and other CLAP instruments play from the timeline like any other instrument. Eight macro knobs are there for automation and <kbd>43xy</kbd>, every plugin parameter is searchable, and the plugin state is saved inside the song.</p>
+          <ul>
+            <li><strong>Crash-guarded scanner</strong>, so one bad plugin does not take the app down</li>
+            <li><strong>Native editor</strong> on Windows, offline render for the whole song</li>
+            <li><strong>MIDI keyboards</strong> with velocity, sustain, pitch bend and MIDI learn</li>
+          </ul>
+        </div>
+        <div class="feature-shot reveal">
+          <img src="/assets/shots/plugin-1600.webp" width="1600" height="900" loading="lazy" decoding="async"
+               alt="Surge XT loaded as a CLAP instrument, with its eight macro knobs and the parameter list in the lower panel."
+               data-caption="A CLAP instrument in the Rack, with macros and every parameter.">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="instruments">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">The sounds</span>
+        <h2>Synths with character, made from scratch.</h2>
+        <p>Every instrument is written for ChipWave itself: oscillators with drift, a Moog-style ladder, formant voices, FM and a pile of retro game noise. All of them are editable knob by knob, and all of them are in the free download.</p>
+      </div>
+
+      <div class="inst-grid">
+        <article class="inst" style="--accent: var(--cyan)">
+          <h3>WaveForge <em>Synth</em></h3>
+          <p>Two band-limited oscillators morphing pulse → saw → octave saw, up to 16 unison voices each, six blend modes, four filter types and eight mod routes.</p>
+        </article>
+        <article class="inst" style="--accent: var(--violet)">
+          <h3>StringWave <em>Strings</em></h3>
+          <p>A string ensemble ported in from its author's own synth: layered string machines with slow drift and a warm stereo spread.</p>
+        </article>
+        <article class="inst" style="--accent: var(--magenta)">
+          <h3>Analog <em>Synth</em></h3>
+          <p>A Moog-style synth from scratch: three drifting oscillators, PWM, noise, the vintage ladder filter, filter and amp envelopes, with Fat Moog Bass and Acid Squelch presets.</p>
+        </article>
+        <article class="inst" style="--accent: var(--yellow)">
+          <h3>FM-4 <em>FM synth</em></h3>
+          <p>Four operators, the eight DX21/TX81Z algorithms, feedback and an envelope per operator. E-Piano, Metallic Bell, Psy Zap Bass and Growl are ready to play.</p>
+        </article>
+        <article class="inst" style="--accent: var(--lime)">
+          <h3>Drum Kit &amp; Drum Synth <em>Beats</em></h3>
+          <p>32 pads, 13 kits, choke groups, a step sequencer with velocity and swing, and a macro drum synth with Dice, Mutate and Bake to sample.</p>
+        </article>
+        <article class="inst" style="--accent: var(--cyan)">
+          <h3>Chip FX <em>Retro</em></h3>
+          <p>A port of sfxr: pickups, lasers, explosions, power-ups, hits, jumps and blips that play in tune with the pattern note.</p>
+        </article>
+        <article class="inst" style="--accent: var(--magenta)">
+          <h3>Voice <em>Vocal</em></h3>
+          <p>No samples: a glottal pulse through formant filters, vowels you build from chips, babble, stutter, spoken words, Throat mode and a metallic/digital/sub Transform.</p>
+        </article>
+        <article class="inst" style="--accent: var(--violet)">
+          <h3>Noise <em>Texture</em></h3>
+          <p>White, pink, brown and crackle through a ladder or state-variable filter with a sweep envelope. Risers, downlifters, impacts and vinyl.</p>
+        </article>
+        <article class="inst" style="--accent: var(--yellow)">
+          <h3>Wave &amp; Grid <em>Wavetable</em></h3>
+          <p>Wavetable and Grid patch instruments for when you want a sound that is not a subtractive synth at all.</p>
+        </article>
+        <article class="inst" style="--accent: var(--lime)">
+          <h3>Sampler <em>Samples</em></h3>
+          <p>Import WAV by button or drag and drop, loop, preview, and chop a break at its transients into slices or straight into notes.</p>
+        </article>
+        <article class="inst" style="--accent: var(--cyan)">
+          <h3>Effects <em>Mix</em></h3>
+          <p>Filter, chorus/flanger, phaser, frequency shifter, delay, reverb, drive, bitcrusher, compressor, metal resonator, digital distortion and sub bass.</p>
+        </article>
+        <article class="inst" style="--accent: var(--violet)">
+          <h3>Plugins <em>CLAP / VST3</em></h3>
+          <p>Host CLAP and VST3 instruments and effects alongside the built-in ones, with macros, automation and saved plugin state.</p>
+        </article>
+      </div>
+
+      <div class="new-showcase new-showcase--pair" style="margin-top:22px">
+        <figure class="reveal">
+          <img src="/assets/shots/waveforge-1600.webp" width="1600" height="900" loading="lazy" decoding="async"
+               alt="The WaveForge polyphonic synth editor, showing two oscillators, unison, filters and envelopes side by side.">
+          <figcaption>WaveForge: every section side by side on a wide panel.</figcaption>
+        </figure>
+        <figure class="reveal">
+          <img src="/assets/shots/drumkit-1600.webp" width="1600" height="900" loading="lazy" decoding="async"
+               alt="The Drum Kit editor with pads, a step sequencer and a velocity lane.">
+          <figcaption>Drum Kit: 32 pads, step sequencer, groove generator.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="themes">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Two looks</span>
+        <h2>Dark Circuit, or a workbench from 1986.</h2>
+        <p>Switch in View › Theme or Settings › Look. Dark Circuit is the default night-time studio; Amiga is the light Workbench look with blue headers and an orange cursor, for people who miss their A500.</p>
+      </div>
+
+      <div class="theme-switch" role="group" aria-label="Choose a theme to preview">
+        <button type="button" data-theme="dark" aria-pressed="true">Dark Circuit</button>
+        <button type="button" data-theme="amiga" aria-pressed="false">Amiga Workbench</button>
+      </div>
+
+      <div class="theme-pair">
+        <figure>
+          <img class="theme-img" data-dark="/assets/shots/tracker-1600.webp" data-amiga="/assets/shots/amiga-tracker-1600.webp"
+               src="/assets/shots/tracker-1600.webp" width="1600" height="900" loading="lazy" decoding="async"
+               alt="The Tracker in the Dark Circuit theme." data-caption="The Tracker in Dark Circuit.">
+          <figcaption id="theme-cap-1">The Tracker</figcaption>
+        </figure>
+        <figure>
+          <img class="theme-img" data-dark="/assets/shots/order-list-1600.webp" data-amiga="/assets/shots/amiga-arranger-1600.webp"
+               src="/assets/shots/order-list-1600.webp" width="1600" height="900" loading="lazy" decoding="async"
+               alt="The Order list in the Dark Circuit theme." data-caption="The Order list in Dark Circuit.">
+          <figcaption id="theme-cap-2">The Order list</figcaption>
+        </figure>
+      </div>
+
+      <div class="theme-notes reveal">
+        <p>Both themes share the same layout, keys and shortcuts, so switching never moves anything. There is also a UI scale in 25 % steps (<kbd>Ctrl</kbd>+<kbd>=</kbd> / <kbd>Ctrl</kbd>+<kbd>-</kbd>) and a text size setting for tired eyes and small laptops.</p>
+      </div>
+
+      <figure style="margin:26px auto 0;max-width:960px">
+        <img src="/assets/shots/palettes-1600.webp" width="1600" height="885" loading="lazy" decoding="async"
+             alt="The two theme palettes with their hex colour codes." style="border-radius:14px;border:1px solid var(--edge-soft)">
+        <figcaption class="hero-note" style="text-align:left;margin-top:8px">The palettes, generated from the app's own colour values.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="screenshots">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Screenshots</span>
+        <h2>Real captures, no mockups.</h2>
+        <p>Every picture on this page is a screenshot of the current build. Click any of them for a closer look.</p>
+      </div>
+
+      <div class="gallery" id="gallery">
+        <button type="button" data-full="/assets/shots/layout-1366-1600.webp" data-caption="The default layout on a 1366×768 laptop: Timeline on top, piano roll below.">
+          <img src="/assets/shots/layout-1366-800.webp" width="800" height="450" loading="lazy" decoding="async" alt="The default layout on a 1366 by 768 laptop.">
+          <span>Default layout</span>
+        </button>
+        <button type="button" data-full="/assets/shots/pressure-1600.webp" data-caption="The piano roll's Pressure lane: recorded aftertouch, drawn and editable.">
+          <img src="/assets/shots/pressure-800.webp" width="800" height="450" loading="lazy" decoding="async" alt="The piano roll with its pressure lane filled in.">
+          <span>Pressure lane</span>
+        </button>
+        <button type="button" data-full="/assets/shots/chords-1600.webp" data-caption="The chord helper: pick a key, click chord pads, then write the progression as chords, an arpeggio or a bass line.">
+          <img src="/assets/shots/chords-800.webp" width="800" height="450" loading="lazy" decoding="async" alt="The chord helper window with chord pads and a progression.">
+          <span>Chord helper</span>
+        </button>
+        <button type="button" data-full="/assets/shots/plugin-1600.webp" data-caption="A CLAP instrument: eight macros for automation, and every plugin parameter on the Advanced tab.">
+          <img src="/assets/shots/plugin-800.webp" width="800" height="450" loading="lazy" decoding="async" alt="A CLAP plugin instrument with its macro knobs.">
+          <span>CLAP plugin</span>
+        </button>
+        <button type="button" data-full="/assets/shots/fx-1600.webp" data-caption="An effect chain as knob cards, including the chrome devices: metal resonator, digital distortion and sub bass.">
+          <img src="/assets/shots/fx-800.webp" width="800" height="450" loading="lazy" decoding="async" alt="An effect chain with knob cards.">
+          <span>FX chain</span>
+        </button>
+        <button type="button" data-full="/assets/shots/slices-1600.webp" data-caption="Chop and slice: a breakbeat cut at its transients, with slices sent to instruments or written as notes.">
+          <img src="/assets/shots/slices-800.webp" width="800" height="450" loading="lazy" decoding="async" alt="The sample editor showing a sliced breakbeat.">
+          <span>Chop &amp; slice</span>
+        </button>
+        <button type="button" data-full="/assets/shots/drop-1600.webp" data-caption="Drag a launcher clip onto the Timeline and the drop preview shows exactly where it will land.">
+          <img src="/assets/shots/drop-800.webp" width="800" height="450" loading="lazy" decoding="async" alt="A launcher clip being dragged onto the Timeline.">
+          <span>Drag to arrange</span>
+        </button>
+        <button type="button" data-full="/assets/shots/order-list-1600.webp" data-caption="The Order list: the song as coloured clips with role badges and automation lanes underneath.">
+          <img src="/assets/shots/order-list-800.webp" width="800" height="450" loading="lazy" decoding="async" alt="The Order list with clips and automation lanes.">
+          <span>Order list</span>
+        </button>
+        <button type="button" data-full="/assets/shots/amiga-mixer-1600.webp" data-caption="The Mixer in the Amiga theme: Workbench blue headers and the same sidechain and limiter.">
+          <img src="/assets/shots/amiga-mixer-800.webp" width="800" height="450" loading="lazy" decoding="async" alt="The mixer in the Amiga theme.">
+          <span>Mixer, Amiga</span>
+        </button>
+        <button type="button" data-full="/assets/shots/browser-1600.webp" data-caption="The Browser: instruments, plugins, samples, songs and presets in one searchable panel.">
+          <img src="/assets/shots/browser-800.webp" width="800" height="450" loading="lazy" decoding="async" alt="The Browser panel docked beside the Timeline.">
+          <span>Browser</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="watch">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Watch</span>
+        <h2>Two minutes, then you'll want to press play.</h2>
+        <p>The promo shows the studio in motion: clips, drums, synths and a finished mix. The channel has longer demos of the built-in songs.</p>
+      </div>
+
+      <div class="video reveal">
+        <button class="video-facade" id="video-play" type="button" data-id="ahJ3aUv-KUk" aria-label="Play the ChipWave Studio promo video">
+          <img src="/assets/shots/promo-960.webp" alt="ChipWave Studio promo video poster: a cartoon cicada in sunglasses and headphones beside an Amiga, with the words ChipWave Studio, free forever." width="960" height="540" loading="lazy">
+          <span class="play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l12 7-12 7z"/></svg>
+          </span>
+          <span class="video-label">ChipWave Studio promo · official</span>
+        </button>
+      </div>
+
+      <p class="hero-note" style="margin-top:14px">
+        More on <a href="https://www.youtube.com/@whatgoesaround1551" rel="noopener">YouTube: @whatgoesaround1551</a> ·
+        <a href="https://youtu.be/acISpXINHEU" rel="noopener">the short</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="download">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Download</span>
+        <h2>Free, and free of strings.</h2>
+        <p>Version 0.2.16.0, for 64-bit Windows, Intel and Apple Silicon Macs. Linux builds from source. The same download links always fetch the newest release.</p>
+      </div>
+
+      <div class="dl-grid">
+        <div class="dl dl--hero">
+          <div class="dl-head">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.5l7.5-1v7H3zM12 4.3L21 3v8.5h-9zM3 12.5h7.5v7L3 18.5zM12 12.5h9V21l-9-1.3z"/></svg>
+            <h3>Windows</h3>
+          </div>
+          <p class="meta">64-bit · installer · 8.3 MB</p>
+          <a class="btn btn--primary" href="https://github.com/postmanpat-303/ChipWaveStudio/releases/latest/download/ChipWave-setup-x64.exe" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
+            Download installer
+          </a>
+          <small>Or the portable <a href="https://github.com/postmanpat-303/ChipWaveStudio/releases/latest/download/ChipWave-windows-x64.zip" rel="noopener">ZIP, 11.1 MB</a>. Not code-signed yet: if SmartScreen appears, choose “More info” then “Run anyway”.</small>
+        </div>
+
+        <div class="dl">
+          <div class="dl-head">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.3 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.9-1.4-.1-2.8.9-3.5.9s-1.8-.9-3-.8c-1.5 0-2.9.9-3.7 2.2-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.7 2.3 2.9 2.2 1.2 0 1.6-.7 3-.7s1.8.7 3 .7 2-1.1 2.8-2.2c.9-1.3 1.3-2.5 1.3-2.6 0 0-2.5-1-2.5-3.3zM14.2 5.3c.6-.8 1.1-1.9 1-3-1 0-2.1.6-2.8 1.4-.6.7-1.1 1.9-1 3 1 .1 2.1-.5 2.8-1.4z"/></svg>
+            <h3>macOS</h3>
+          </div>
+          <p class="meta">Universal · Apple Silicon + Intel · 25.2 MB</p>
+          <a class="btn" href="https://github.com/postmanpat-303/ChipWaveStudio/releases/latest/download/ChipWave-macos-universal.dmg" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
+            Download DMG
+          </a>
+          <small>macOS 11 or later, not notarised: first launch with Control-click → <b>Open</b>. Or the <a href="https://github.com/postmanpat-303/ChipWaveStudio/releases/latest/download/ChipWave-macos-universal.zip" rel="noopener">ZIP, 23 MB</a>.</small>
+        </div>
+
+        <div class="dl">
+          <div class="dl-head">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c-2.2 0-4 1.6-4 3.7 0 1 .4 1.7.4 2.3 0 .5-.3.8-.8 1.4-.6.7-1.1 1.6-1.1 2.8 0 .6.1 1.2.4 1.7-.6.6-1.4 1.4-1.4 3C5.5 19.4 8.3 22 12 22s6.5-2.6 6.5-5.1c0-1.6-.8-2.4-1.4-3 .2-.5.4-1.1.4-1.7 0-1.2-.5-2.1-1.1-2.8-.5-.6-.8-.9-.8-1.4 0-.6.4-1.3.4-2.3C16 3.6 14.2 2 12 2zm-2.2 5.3c.5 0 .9.6.9 1.3s-.4 1.3-.9 1.3-.9-.6-.9-1.3.4-1.3.9-1.3zm4.4 0c.5 0 .9.6.9 1.3s-.4 1.3-.9 1.3-.9-.6-.9-1.3.4-1.3.9-1.3zM9 12.5c.5 0 .9.5.9 1s-.4 1-.9 1-.9-.5-.9-1 .4-1 .9-1zm1.6 3.7c.4-.4 1-.6 1.4-.6s1 .2 1.4.6c.3.3.2.7-.2.6-.4-.1-.8-.2-1.2-.2s-.8.1-1.2.2c-.4.1-.5-.3-.2-.6zM14.1 12.5c.5 0 .9.5.9 1s-.4 1-.9 1-.9-.5-.9-1 .4-1 .9-1z"/></svg>
+            <h3>Linux</h3>
+          </div>
+          <p class="meta">Build from source · Cargo</p>
+          <a class="btn" href="https://github.com/postmanpat-303/ChipWaveStudio#build" rel="noopener">Build instructions</a>
+          <small>Needs <code>libasound2-dev</code>. Then <code>cargo run --release</code>.</small>
+        </div>
+      </div>
+
+      <div class="install">
+        <div>
+          <h4>First run</h4>
+          <p>The app opens with a clean song. To hear what it can do, open <b>File › Demo songs</b> and press <kbd>Space</kbd>.</p>
+        </div>
+        <div>
+          <h4>SmartScreen</h4>
+          <p>The Windows exe is not code-signed yet, so Windows may warn. Choose <b>More info</b>, then <b>Run anyway</b>.</p>
+        </div>
+        <div>
+          <h4>macOS first launch</h4>
+          <p>Control-click the app and choose <b>Open</b>, or run <code>xattr -dr com.apple.quarantine /Applications/ChipWave.app</code>. See <a href="https://github.com/postmanpat-303/ChipWaveStudio/blob/main/docs/MACOS.md" rel="noopener">MACOS.md</a>.</p>
+        </div>
+        <div>
+          <h4>Updating</h4>
+          <p>On 0.2.3.5 or later, <b>Help › Check for updates…</b> offers the new version, or download it here again.</p>
+        </div>
+      </div>
+
+      <p class="checksums">
+        Verify a download with <a href="https://github.com/postmanpat-303/ChipWaveStudio/releases/latest/download/SHA256SUMS.txt" rel="noopener">SHA256SUMS.txt</a> ·
+        <a href="https://github.com/postmanpat-303/ChipWaveStudio/releases" rel="noopener">all releases and notes</a> ·
+        <a href="https://github.com/postmanpat-303/ChipWaveStudio/blob/main/docs/CHANGELOG.md" rel="noopener">changelog</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="docs">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Documentation</span>
+        <h2>Every knob has a manual.</h2>
+        <p>Written by the author, kept in the repository alongside the code. Press <kbd>F12</kbd> in the app for the full key list.</p>
+      </div>
+
+      <div class="docs-grid">
+        <a class="doc" href="https://github.com/postmanpat-303/ChipWaveStudio/blob/main/docs/TIMELINE.md" rel="noopener">Timeline <span>MD</span></a>
+        <a class="doc" href="https://github.com/postmanpat-303/ChipWaveStudio/blob/main/docs/TRACKER.md" rel="noopener">Tracker &amp; effects <span>MD</span></a>
+        <a class="doc" href="https://github.com/postmanpat-303/ChipWaveStudio/blob/main/docs/GENERATORS.md" rel="noopener">Generators <span>MD</span></a>
+        <a class="doc" href="https://github.com/postmanpat-303/ChipWaveStudio/blob/main/docs/VOICE.md" rel="noopener">Voice <span>MD</span></a>
+        <a class="doc" href="https://github.com/postmanpat-303/ChipWaveStudio/blob/main/docs/RACKS.md" rel="noopener">Racks <span>MD</span></a>
+        <a class="doc" href="https://github.com/postmanpat-303/ChipWaveStudio/blob/main/docs/MIXER.md" rel="noopener">Mixer &amp; limiter <span>MD</span></a>
+        <a class="doc" href="https://github.com/postmanpat-303/ChipWaveStudio/blob/main/docs/MIDI.md" rel="noopener">MIDI <span>MD</span></a>
+        <a class="doc" href="https://github.com/postmanpat-303/ChipWaveStudio/blob/main/docs/PLUGINS.md" rel="noopener">Plugins <span>MD</span></a>
+        <a class="doc" href="https://github.com/postmanpat-303/ChipWaveStudio/blob/main/docs/CHORDS.md" rel="noopener">Chords <span>MD</span></a>
+        <a class="doc" href="https://github.com/postmanpat-303/ChipWaveStudio/blob/main/docs/BROWSER.md" rel="noopener">Browser <span>MD</span></a>
+        <a class="doc" href="https://github.com/postmanpat-303/ChipWaveStudio/blob/main/docs/FILE_FORMAT.md" rel="noopener">.cwt song format <span>MD</span></a>
+        <a class="doc" href="https://github.com/postmanpat-303/ChipWaveStudio/blob/main/docs/ARCHITECTURE.md" rel="noopener">Architecture <span>MD</span></a>
+      </div>
+
+      <p class="hero-note" style="margin-top:18px">
+        Building, packaging and CI: <a href="https://github.com/postmanpat-303/ChipWaveStudio/blob/main/docs/PACKAGING.md" rel="noopener">PACKAGING.md</a> ·
+        Contributing: <a href="https://github.com/postmanpat-303/ChipWaveStudio/blob/main/CONTRIBUTING.md" rel="noopener">CONTRIBUTING.md</a> ·
+        Roadmap: <a href="https://github.com/postmanpat-303/ChipWaveStudio/blob/main/docs/ROADMAP.md" rel="noopener">ROADMAP.md</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="support">
+    <div class="wrap">
+      <div class="support reveal">
+        <span class="kicker">Made by one person</span>
+        <h2>Free software, kept alive by coffee.</h2>
+        <p>ChipWave Studio is written by Del (postmanpat) in Rust, in the evenings, and given away under the GPL. If it earns a place in your studio, you can buy a coffee, tell a friend, or send a pull request — all three keep it going.</p>
+        <div class="support-links">
+          <a class="btn btn--primary" href="https://buymeacoffee.com/postmanpat" rel="noopener">☕ Buy me a coffee</a>
+          <a class="btn" href="https://paypal.me/derekh100" rel="noopener">PayPal</a>
+          <a class="btn" href="https://github.com/postmanpat-303/ChipWaveStudio" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.youtube.com/@whatgoesaround1551" rel="noopener">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/icon-180.png" alt="" width="40" height="40">
+        <strong style="color:var(--text);font-family:var(--mono);letter-spacing:0.12em;font-size:0.8rem">CHIPWAVE STUDIO</strong>
+        <p>A free music sequencer with a retro heart. Written in Rust with egui and cpal, for Windows, macOS and Linux.</p>
+        <p class="hero-note">Was called ChipWave Tracker until 0.2.3.19 — same app, same <code>.cwt</code> songs.</p>
+      </div>
+      <div>
+        <h4>Project</h4>
+        <ul>
+          <li><a href="https://github.com/postmanpat-303/ChipWaveStudio" rel="noopener">Source on GitHub</a></li>
+          <li><a href="https://github.com/postmanpat-303/ChipWaveStudio/releases" rel="noopener">Releases</a></li>
+          <li><a href="https://github.com/postmanpat-303/ChipWaveStudio/blob/main/docs/CHANGELOG.md" rel="noopener">Changelog</a></li>
+          <li><a href="https://github.com/postmanpat-303/ChipWaveStudio/blob/main/docs/ROADMAP.md" rel="noopener">Roadmap</a></li>
+          <li><a href="https://github.com/postmanpat-303/ChipWaveStudio/blob/main/CONTRIBUTING.md" rel="noopener">Contributing</a></li>
+          <li><a href="https://github.com/postmanpat-303/BigWaveRadio" rel="noopener">BigWave Radio, the sister project</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>This page</h4>
+        <ul>
+          <li><a href="#download">Download</a></li>
+          <li><a href="#screenshots">Screenshots</a></li>
+          <li><a href="#docs">Documentation</a></li>
+          <li><a href="https://buymeacoffee.com/postmanpat" rel="noopener">Support the project</a></li>
+          <li><a href="/assets/LICENSE-AtkinsonHyperlegible.txt">Font licence (OFL 1.1)</a></li>
+          <li><a href="https://www.gnu.org/licenses/gpl-3.0.html" rel="noopener">GPL-3.0</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-base">
+      <span>© <span id="year">2026</span> Del (postmanpat) · ChipWave Studio is free software under the GPL-3.0-or-later</span>
+      <span>Pictures are real captures of version 0.2.16.0 · chipwavestudio.com</span>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+  <button class="lb-btn lb-close" id="lb-close" aria-label="Close">✕</button>
+  <button class="lb-btn lb-prev" id="lb-prev" aria-label="Previous image">‹</button>
+  <button class="lb-btn lb-next" id="lb-next" aria-label="Next image">›</button>
+  <div>
+    <img id="lb-img" src="" alt="">
+    <p class="lightbox-caption" id="lb-caption"></p>
+  </div>
+</div>
+
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

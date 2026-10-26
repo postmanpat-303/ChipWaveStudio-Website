@@ -1,0 +1,6 @@
+preview/
+*.zip
+.netlify/
+__pycache__/
+.DS_Store
+Thumbs.db
