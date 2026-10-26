@@ -18,8 +18,11 @@ ICONS = REPO / "assets" / "icon"
 FONTS = REPO / "assets" / "fonts"
 
 OUT_SHOTS = PUB / "assets" / "shots"
+OUT_MARKETING = PUB / "assets" / "marketing"
 OUT = PUB / "assets"
 OUT_SHOTS.mkdir(parents=True, exist_ok=True)
+OUT_MARKETING.mkdir(parents=True, exist_ok=True)
+MEDIA = Path(__file__).resolve().parents[1] / "media-src"
 
 # slug -> (source path, is_wide_app_shot)
 SHOT_SET = {
@@ -48,6 +51,9 @@ SHOT_SET = {
     "palettes": SHOTS / "theme-palettes.png",
     "drop": UNIFIED / "03-launcher-to-timeline-drag-1920x1080.png",
     "layout-1366": UNIFIED / "01-default-layout-REAL-1366x768.png",
+    "slate-timeline": SHOTS / "timeline-selected-slate.png",
+    "dark-timeline": SHOTS / "dark-timeline.png",
+    "amiga-timeline-2": SHOTS / "amiga-timeline.png",
 }
 
 
@@ -75,6 +81,17 @@ def main() -> None:
     if promo.exists():
         with Image.open(promo) as im:
             webp(im.convert("RGB"), OUT_SHOTS / "promo-960.webp", 960, 86)
+
+    # composed marketing artwork (kept in media-src/)
+    for slug, src in {
+        "collage": MEDIA / "collage-1920x1080.png",
+        "three-themes": MEDIA / "feature-8-themes.png",
+    }.items():
+        if src.exists():
+            with Image.open(src) as im:
+                im = im.convert("RGB")
+                webp(im, OUT_MARKETING / f"{slug}-1600.webp", min(1600, im.width), 84)
+                webp(im, OUT_MARKETING / f"{slug}-800.webp", 800, 80)
 
     if missing:
         print("MISSING:")

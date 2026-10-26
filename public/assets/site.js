@@ -68,46 +68,6 @@
     sections.forEach(function (s) { navObserver.observe(s); });
   }
 
-  /* ---------- theme switcher ---------- */
-  var themeButtons = Array.prototype.slice.call(document.querySelectorAll(".theme-switch button"));
-  var themeImgs = Array.prototype.slice.call(document.querySelectorAll(".theme-img"));
-  var themeNames = { dark: "Dark Circuit", amiga: "Amiga Workbench" };
-  var themeShots = ["The Tracker", "The Order list"];
-
-  function setTheme(name) {
-    if (!themeNames[name]) return;
-    themeButtons.forEach(function (b) {
-      b.setAttribute("aria-pressed", String(b.dataset.theme === name));
-    });
-    themeImgs.forEach(function (img, i) {
-      var src = img.dataset[name];
-      if (!src) return;
-      var label = (themeShots[i] || "ChipWave Studio") + ", " + themeNames[name];
-      img.src = src;
-      img.alt = label + " theme.";
-      img.dataset.caption = label + " theme.";
-    });
-  }
-
-  themeButtons.forEach(function (b) {
-    b.addEventListener("click", function () { setTheme(b.dataset.theme); });
-  });
-
-  /* ---------- video facade ---------- */
-  var videoBtn = document.getElementById("video-play");
-  if (videoBtn) {
-    videoBtn.addEventListener("click", function () {
-      var frame = document.createElement("iframe");
-      frame.src = "https://www.youtube-nocookie.com/embed/" + videoBtn.dataset.id +
-        "?autoplay=1&rel=0&modestbranding=1";
-      frame.title = "ChipWave Studio promo";
-      frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-      frame.allowFullscreen = true;
-      frame.loading = "lazy";
-      videoBtn.replaceWith(frame);
-    }, { once: true });
-  }
-
   /* ---------- lightbox ---------- */
   var lb = document.getElementById("lightbox");
   var lbImg = document.getElementById("lb-img");
@@ -128,7 +88,7 @@
         el: btn
       });
     });
-    Array.prototype.forEach.call(document.querySelectorAll(".feature-shot img, .theme-pair img, .new-showcase img"), function (img) {
+    Array.prototype.forEach.call(document.querySelectorAll(".feature-shot img, .marketing img, .theme-row img, .new-showcase img"), function (img) {
       items.push({
         src: img.dataset.full || img.currentSrc || img.src,
         caption: img.dataset.caption || (img.parentElement.querySelector("figcaption") || {}).textContent || "",
@@ -167,7 +127,7 @@
   document.addEventListener("click", function (e) {
     var btn = e.target.closest(".gallery button");
     if (btn) { e.preventDefault(); openFor(btn); return; }
-    var img = e.target.closest(".feature-shot img, .theme-pair img, .new-showcase img");
+    var img = e.target.closest(".feature-shot img, .marketing img, .theme-row img, .new-showcase img");
     if (img) { e.preventDefault(); openFor(img); }
   });
 

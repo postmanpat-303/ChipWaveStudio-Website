@@ -1,4 +1,5 @@
 preview/
+media-incoming/
 *.zip
 .netlify/
 __pycache__/

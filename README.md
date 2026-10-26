@@ -6,14 +6,17 @@ The website for **ChipWave Studio** — a plain static site, no build step, no f
 public/            the whole site (this is what gets published)
   index.html       the landing page
   assets/site.css  styles
-  assets/site.js   menu, theme switch, video facade, lightbox
+  assets/site.js   menu, lightbox, reveal animations
   assets/shots/    screenshots converted to WebP (1600 and 800 wide)
+  assets/marketing/ composed artwork (the collage), also WebP
+  assets/video/    the 0.2.16.0 promo, served from this site
   assets/fonts/    Atkinson Hyperlegible Next + Mono (OFL 1.1)
   404.html  robots.txt  sitemap.xml
+media-src/         the original marketing artwork the site uses
 tools/
-  build_images.py     rebuilds assets/shots, icons and the social image from the app repo
+  build_images.py     rebuilds assets/shots, assets/marketing, icons and the social image
   deploy_netlify.py   creates/updates the Netlify site and attaches the domain
-netlify.toml       publish dir, cache and security headers, /download shortcuts
+netlify.toml       publish dir and redirect shortcuts (headers live in public/_headers)
 ```
 
 ## Rebuild the pictures
@@ -65,8 +68,19 @@ Cloudflare flattens the apex CNAME, so no ALIAS record is needed.
 - Version, download URLs, sizes and the “new in” section are for **0.2.16.0**.
   Download links use `releases/latest/download/...`, so they follow new releases;
   the version text and the new-in cards need a manual edit per release.
-- Every claim on the page comes from the app's README and docs.
+- Every claim on the page comes from the app's README, docs and source
+  (the themes, for example, are `SLATE`, `DARK` and `AMIGA` in `src/theme.rs` —
+  Slate is the default, and the page used to say there were only two).
 - Pictures are real captures; keep it that way.
+- The promo in `public/assets/video/` is the 62 MB 0.2.16.0 MP4 from the media
+  folder. It is committed so every deploy carries it; `preload="none"` means a
+  visitor only downloads it after pressing play. Compress it before swapping in a
+  longer video, and keep `poster="/assets/shots/promo-960.webp"`.
+- The other artwork in the media folder (captioned `feature-*.png`, `hero-1920`,
+  `banner`, `og-image`) is deliberately not used: the captions duplicate this
+  page and some are out of date (16-pad drum kit, "Windows and Linux"), while the
+  raw captures are sharper. `hero-1920` and `banner-1600x500` are good for the
+  GitHub repo and social cards.
 
 ## Licence
 

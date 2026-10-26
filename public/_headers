@@ -17,6 +17,10 @@
 /assets/og-image.jpg
   Cache-Control: public, max-age=86400
 
+/assets/video/*
+  Cache-Control: public, max-age=86400
+  Accept-Ranges: bytes
+
 /assets/*.css
   Cache-Control: public, max-age=600, must-revalidate
 

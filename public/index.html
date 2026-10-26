@@ -182,6 +182,12 @@
         <p>Arrange like a DAW, write like a sequencer, program like a tracker. ChipWave gives you the timeline, the notes, the drums, the sounds and the mix — with no project files to fight.</p>
       </div>
 
+      <figure class="marketing marketing-wide reveal">
+        <img src="/assets/marketing/collage-1600.webp" width="1600" height="900" loading="lazy" decoding="async"
+             alt="A collage of the studio: the Timeline with the Clip Arranger and piano roll, the mixer with its limiter, an instrument editor, the tracker, the drum kit's step sequencer and a synth's macro knobs.">
+        <figcaption>One window: clips, piano roll, rack, mixer, tracker, drum kit and synths.</figcaption>
+      </figure>
+
       <div class="feature">
         <div class="feature-copy reveal">
           <span class="kicker">Arrange</span>
@@ -387,40 +393,35 @@
   <section id="themes">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="kicker">Two looks</span>
-        <h2>Dark Circuit, or a workbench from 1986.</h2>
-        <p>Switch in View › Theme or Settings › Look. Dark Circuit is the default night-time studio; Amiga is the light Workbench look with blue headers and an orange cursor, for people who miss their A500.</p>
+        <span class="kicker">Three looks</span>
+        <h2>Slate, Dark Circuit, or a workbench from 1986.</h2>
+        <p>Three themes, switched in View › Theme or Settings › Look. <strong>Slate</strong> is the default — the Ember skin on slate grey. <strong>Dark Circuit</strong> is the night-time studio. <strong>Amiga</strong> is the light Workbench look with blue headers and an orange cursor, for people who miss their A500.</p>
       </div>
 
-      <div class="theme-switch" role="group" aria-label="Choose a theme to preview">
-        <button type="button" data-theme="dark" aria-pressed="true">Dark Circuit</button>
-        <button type="button" data-theme="amiga" aria-pressed="false">Amiga Workbench</button>
-      </div>
-
-      <div class="theme-pair">
+      <figure class="theme-row reveal">
         <figure>
-          <img class="theme-img" data-dark="/assets/shots/tracker-1600.webp" data-amiga="/assets/shots/amiga-tracker-1600.webp"
-               src="/assets/shots/tracker-1600.webp" width="1600" height="900" loading="lazy" decoding="async"
-               alt="The Tracker in the Dark Circuit theme." data-caption="The Tracker in Dark Circuit.">
-          <figcaption id="theme-cap-1">The Tracker</figcaption>
+          <img src="/assets/shots/slate-timeline-1600.webp" width="1600" height="900" loading="lazy" decoding="async"
+               alt="The Timeline and Rack in the default Slate theme: slate grey panels with orange accents."
+               data-caption="Slate, the default theme: the Timeline and the Rack.">
+          <figcaption>Slate <em>default</em></figcaption>
         </figure>
         <figure>
-          <img class="theme-img" data-dark="/assets/shots/order-list-1600.webp" data-amiga="/assets/shots/amiga-arranger-1600.webp"
-               src="/assets/shots/order-list-1600.webp" width="1600" height="900" loading="lazy" decoding="async"
-               alt="The Order list in the Dark Circuit theme." data-caption="The Order list in Dark Circuit.">
-          <figcaption id="theme-cap-2">The Order list</figcaption>
+          <img src="/assets/shots/dark-timeline-1600.webp" width="1600" height="900" loading="lazy" decoding="async"
+               alt="The Timeline in the Dark Circuit theme: near-black panels with green and amber clips."
+               data-caption="Dark Circuit: the night-time studio.">
+          <figcaption>Dark Circuit</figcaption>
         </figure>
-      </div>
+        <figure>
+          <img src="/assets/shots/amiga-timeline-2-1600.webp" width="1600" height="900" loading="lazy" decoding="async"
+               alt="The same song in the Amiga theme: light Workbench panels, blue headers and an orange cursor."
+               data-caption="Amiga (Workbench Gradient): blue headers, orange cursor.">
+          <figcaption>Amiga</figcaption>
+        </figure>
+      </figure>
 
       <div class="theme-notes reveal">
-        <p>Both themes share the same layout, keys and shortcuts, so switching never moves anything. There is also a UI scale in 25 % steps (<kbd>Ctrl</kbd>+<kbd>=</kbd> / <kbd>Ctrl</kbd>+<kbd>-</kbd>) and a text size setting for tired eyes and small laptops.</p>
+        <p>Every theme keeps the same layout, keys and shortcuts, so switching never moves anything. There is also a UI scale in 25 % steps (<kbd>Ctrl</kbd>+<kbd>=</kbd> / <kbd>Ctrl</kbd>+<kbd>-</kbd>) and a text size setting for tired eyes and small laptops.</p>
       </div>
-
-      <figure style="margin:26px auto 0;max-width:960px">
-        <img src="/assets/shots/palettes-1600.webp" width="1600" height="885" loading="lazy" decoding="async"
-             alt="The two theme palettes with their hex colour codes." style="border-radius:14px;border:1px solid var(--edge-soft)">
-        <figcaption class="hero-note" style="text-align:left;margin-top:8px">The palettes, generated from the app's own colour values.</figcaption>
-      </figure>
     </div>
   </section>
 
@@ -481,23 +482,23 @@
     <div class="wrap">
       <div class="section-head reveal">
         <span class="kicker">Watch</span>
-        <h2>Two minutes, then you'll want to press play.</h2>
-        <p>The promo shows the studio in motion: clips, drums, synths and a finished mix. The channel has longer demos of the built-in songs.</p>
+        <h2>Thirty-one seconds, sound on.</h2>
+        <p>The 0.2.16.0 promo, played here from this site rather than an advertising network: clips, drums, synths and a finished mix. The channel has longer demos of the built-in songs.</p>
       </div>
 
       <div class="video reveal">
-        <button class="video-facade" id="video-play" type="button" data-id="ahJ3aUv-KUk" aria-label="Play the ChipWave Studio promo video">
-          <img src="/assets/shots/promo-960.webp" alt="ChipWave Studio promo video poster: a cartoon cicada in sunglasses and headphones beside an Amiga, with the words ChipWave Studio, free forever." width="960" height="540" loading="lazy">
-          <span class="play" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l12 7-12 7z"/></svg>
-          </span>
-          <span class="video-label">ChipWave Studio promo · official</span>
-        </button>
+        <video id="promo" controls preload="none" playsinline width="1920" height="1080"
+               poster="/assets/shots/promo-960.webp">
+          <source src="/assets/video/chipwave-promo.mp4" type="video/mp4">
+          <p>Your browser cannot play this video.
+             <a href="https://youtu.be/ahJ3aUv-KUk">Watch the promo on YouTube</a>.</p>
+        </video>
       </div>
 
       <p class="hero-note" style="margin-top:14px">
-        More on <a href="https://www.youtube.com/@whatgoesaround1551" rel="noopener">YouTube: @whatgoesaround1551</a> ·
-        <a href="https://youtu.be/acISpXINHEU" rel="noopener">the short</a>
+        Also on <a href="https://www.youtube.com/@whatgoesaround1551" rel="noopener">YouTube: @whatgoesaround1551</a> ·
+        <a href="https://youtu.be/ahJ3aUv-KUk" rel="noopener">the promo</a> ·
+        <a href="https://youtu.be/acISpXINHEU" rel="noopener">the vertical short</a>
       </p>
     </div>
   </section>
