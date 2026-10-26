@@ -7,7 +7,7 @@ Writes into public/assets: shots/*.webp (1600 + 800 wide), icon pngs, og-image.j
 import sys
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 PUB = ROOT / "public"
@@ -93,6 +93,28 @@ def main() -> None:
                 webp(im, OUT_MARKETING / f"{slug}-1600.webp", min(1600, im.width), 84)
                 webp(im, OUT_MARKETING / f"{slug}-800.webp", 800, 80)
 
+    # the cicada engraving: the original is black ink on transparent paper, so
+    # invert the luminance to get light line art that shows on the dark page
+    cicada = MEDIA / "cicada-source.png"
+    if cicada.exists():
+        with Image.open(cicada) as im:
+            im = im.convert("RGBA")
+            alpha = im.split()[3]
+            ink = ImageChops.multiply(
+                ImageOps.invert(im.convert("L")).point(lambda v: min(255, int(v * 1.12))),
+                alpha,
+            )
+            pad = int(max(im.size) * 0.025)
+            white = Image.new("RGBA", im.size, (228, 240, 255, 255))
+            white.putalpha(ink)
+            art = Image.new("RGBA", (im.width + pad * 2, im.height + pad * 2), (228, 240, 255, 0))
+            art.alpha_composite(white, (pad, pad))
+            art.save(OUT / "cicada.png")
+            for w in (800, 400):
+                h = round(art.height * w / art.width)
+                art.resize((w, h), Image.LANCZOS).save(OUT / f"cicada-{w}.webp", "WEBP", quality=92, method=6)
+                print(f"  cicada-{w}.webp  {w}x{h}")
+
     if missing:
         print("MISSING:")
         for m in missing:
@@ -122,8 +144,12 @@ def main() -> None:
     og = Image.alpha_composite(og.convert("RGBA"), shade).convert("RGB")
     draw = ImageDraw.Draw(og)
 
-    icon = Image.open(ICONS / "chipwave_studio_256.png").convert("RGBA").resize((116, 116), Image.LANCZOS)
-    og.paste(icon, (80, 118), icon)
+    # the cicada engraving, large and faint, on the right of the card
+    art = Image.open(OUT / "cicada.png").convert("RGBA")
+    art = art.resize((560, round(art.height * 560 / art.width)), Image.LANCZOS)
+    faded = art.copy()
+    faded.putalpha(faded.split()[3].point(lambda v: int(v * 0.42)))
+    og.paste(faded, (640, 245), faded)
 
     def font(name, size):
         p = FONTS / name
@@ -132,8 +158,10 @@ def main() -> None:
     draw.text((80, 268), "ChipWave Studio", font=font("AtkinsonHyperlegibleNext-SemiBold.ttf", 62), fill=(230, 240, 255))
     draw.text((80, 348), "A free music sequencer", font=font("AtkinsonHyperlegibleNext-Regular.ttf", 44), fill=(230, 240, 255))
     draw.text((80, 398), "with a retro heart.", font=font("AtkinsonHyperlegibleNext-Regular.ttf", 44), fill=(34, 227, 255))
-    draw.text((80, 492), "Windows  ·  macOS  ·  Linux          FREE  ·  OPEN SOURCE  ·  GPL-3.0",
-              font=font("AtkinsonHyperlegibleMono-Medium.ttf", 20), fill=(169, 183, 220))
+    meta_font = font("AtkinsonHyperlegibleMono-Medium.ttf", 20)
+    draw.text((80, 486), "Windows \u00b7 macOS \u00b7 Linux", font=meta_font, fill=(169, 183, 220))
+    draw.text((80, 526), "FREE \u00b7 OPEN SOURCE \u00b7 GPL-3.0", font=meta_font, fill=(169, 183, 220))
+
     og.save(OUT / "og-image.jpg", "JPEG", quality=88, optimize=True)
     print("og done")
 

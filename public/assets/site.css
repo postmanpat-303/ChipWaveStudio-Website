@@ -154,7 +154,7 @@ p { margin: 0; }
   color: var(--text);
   margin-right: auto;
 }
-.brand img { width: 30px; height: 30px; border-radius: 7px; }
+.brand-mark { height: 44px; width: auto; }
 .brand span {
   font-family: var(--mono);
   font-size: 0.86rem;
@@ -239,7 +239,21 @@ p { margin: 0; }
   padding: clamp(38px, 6vw, 76px) 0 clamp(30px, 4vw, 48px);
   position: relative;
 }
+.hero::after {
+  content: "";
+  position: absolute;
+  top: clamp(0px, 3vw, 36px);
+  right: -6%;
+  width: min(48vw, 600px);
+  aspect-ratio: 800 / 602;
+  background: url("/assets/cicada-800.webp") center / contain no-repeat;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
 .hero-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   justify-items: center;
@@ -770,7 +784,7 @@ kbd {
 .site-footer a { color: var(--dim); text-decoration: none; }
 .site-footer a:hover { color: var(--cyan); }
 .footer-brand { display: grid; gap: 10px; justify-items: start; }
-.footer-brand img { width: 40px; height: 40px; border-radius: 9px; }
+.footer-mark { height: 48px; width: auto; }
 .footer-base {
   margin-top: 34px;
   padding-top: 20px;
@@ -882,6 +896,7 @@ kbd {
     gap: 2px;
   }
   .site-header.menu-open .nav a { padding: 12px; font-size: 0.95rem; }
+  .hero::after { display: none; }
   .hero-shot::before { filter: blur(10px); opacity: 0.35; }
 }
 
@@ -890,6 +905,7 @@ kbd {
   .theme-row { grid-template-columns: 1fr; }
   .header-cta .btn--primary { display: none; }
   .brand span { font-size: 0.74rem; letter-spacing: 0.08em; }
+  .brand-mark { height: 34px; }
   .footer-grid { grid-template-columns: 1fr; }
   .section-head { margin-bottom: 26px; }
   .lb-prev { left: 8px; }
