@@ -14,6 +14,7 @@ public/            the whole site (this is what gets published)
   assets/marketing/ composed artwork (the collage), also WebP
   assets/video/    the 0.2.16.0 promo, served from this site
   assets/fonts/    Atkinson Hyperlegible Next + Mono (OFL 1.1)
+  manual/          the user manual: the PDF plus index.html, the reader page
   404.html  robots.txt  sitemap.xml
 media-src/         the original marketing artwork and the cicada engraving the site uses
 tools/
@@ -81,6 +82,10 @@ stops it.
   (the themes, for example, are `SLATE`, `DARK` and `AMIGA` in `src/theme.rs` —
   Slate is the default, and the page used to say there were only two).
 - Pictures are real captures; keep it that way.
+- The user manual lives in `public/manual/`. To publish a new one, drop the PDF in there,
+  render page 1 as a PNG into `media-src/manual-cover.png` (Windows PowerShell can do it
+  with `Windows.Data.Pdf`, see the commit log), rebuild the cover WebPs and update the
+  page count, file size and version on the home page and in `manual/index.html`.
 - The cicada in the header, footer, hero and social card is `media-src/cicada-source.png`, re-inked by `build_images.py` into white line art for the dark page.
 - The promo in `public/assets/video/` is the 62 MB 0.2.16.0 MP4 from the media
   folder. It is committed so every deploy carries it; `preload="none"` means a
