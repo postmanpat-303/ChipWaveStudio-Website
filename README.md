@@ -1,6 +1,9 @@
+![ChipWave Studio — a free music sequencer with a retro heart](media-src/banner-1600x500.png)
+
 # chipwavestudio.com
 
 The website for **ChipWave Studio** — a plain static site, no build step, no framework.
+Live at **[chipwavestudio.com](https://chipwavestudio.com/)**, published by Netlify.
 
 ```
 public/            the whole site (this is what gets published)
@@ -50,6 +53,10 @@ python tools/deploy_netlify.py --site chipwavestudio --domain chipwavestudio.com
 The script zips `public/`, creates the site if it does not exist, uploads the
 deploy, waits for it to go live and sets the custom domain. Never commit the token.
 
+If Netlify is ever switched to building from this repository instead, the settings
+are: publish directory `public`, no build command, and `netlify.toml` at the root.
+The 62 MB promo must stay in the repository for the video to survive a git build.
+
 ### DNS
 
 The domain is registered at Cloudflare, so point it at Netlify in the Cloudflare
@@ -61,7 +68,9 @@ deploy; in short:
 | CNAME | `@` (chipwavestudio.com) | `<site>.netlify.app` | DNS only |
 | CNAME | `www` | `<site>.netlify.app` | DNS only |
 
-Cloudflare flattens the apex CNAME, so no ALIAS record is needed.
+Cloudflare flattens the apex CNAME, so no ALIAS record is needed. Keep both
+records on **DNS only**: Netlify issues the HTTPS certificate itself, and proxying
+stops it.
 
 ## Content notes
 
