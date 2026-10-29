@@ -53,6 +53,8 @@ SHOT_SET = {
     "layout-1366": UNIFIED / "01-default-layout-REAL-1366x768.png",
     "about-rain": SHOTS / "about-digital-rain.png",
     "help-menu": SHOTS / "help-user-manual.png",
+    "arp": SHOTS / "arp-32-steps.png",
+    "ctrl-copy": SHOTS / "timeline-ctrl-copy.png",
     "slate-timeline": SHOTS / "timeline-selected-slate.png",
     "dark-timeline": SHOTS / "dark-timeline.png",
     "amiga-timeline-2": SHOTS / "amiga-timeline.png",

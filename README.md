@@ -75,7 +75,7 @@ stops it.
 
 ## Content notes
 
-- Version, download URLs, sizes and the “new in” section are for **0.2.17.0**.
+- Version, download URLs, sizes and the “new in” section are for **0.2.18.1**.
   Download links use `releases/latest/download/...`, so they follow new releases;
   the version text and the new-in cards need a manual edit per release.
 - Every claim on the page comes from the app's README, docs and source
