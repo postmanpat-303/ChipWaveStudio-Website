@@ -75,7 +75,7 @@ stops it.
 
 ## Content notes
 
-- Version, download URLs, sizes and the “new in” section are for **0.2.18.1**.
+- Version, download URLs, sizes and the “new in” section are for **0.2.20.0** (with 0.2.19.0 below it).
   Download links use `releases/latest/download/...`, so they follow new releases;
   the version text and the new-in cards need a manual edit per release.
 - Every claim on the page comes from the app's README, docs and source
@@ -87,10 +87,11 @@ stops it.
   with `Windows.Data.Pdf`, see the commit log), rebuild the cover WebPs and update the
   page count, file size and version on the home page and in `manual/index.html`.
 - The cicada in the header, footer, hero and social card is `media-src/cicada-source.png`, re-inked by `build_images.py` into white line art for the dark page.
-- The promo in `public/assets/video/` is the 62 MB MP4 from the media
-  folder. It is committed so every deploy carries it; `preload="none"` means a
-  visitor only downloads it after pressing play. Compress it before swapping in a
-  longer video, and keep `poster="/assets/shots/promo-960.webp"`.
+- The Watch section embeds the YouTube promo and Short (`tWuAjS5rmDY`, `9mD4wTHEJ1k`)
+  behind local posters (`assets/shots/promo-0220-960.webp`, `short-0220-540.webp`):
+  nothing loads from YouTube until a visitor presses play, and then it uses
+  youtube-nocookie.com. For a new video, change the `data-yt` id, the link and the poster.
+  The older self-hosted promo is still in `public/assets/video/` but no longer used.
 - The other artwork in the media folder (captioned `feature-*.png`, `hero-1920`,
   `banner`, `og-image`) is deliberately not used: the captions duplicate this
   page and some are out of date (16-pad drum kit, "Windows and Linux"), while the

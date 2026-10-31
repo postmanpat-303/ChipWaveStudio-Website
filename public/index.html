@@ -37,7 +37,8 @@
   "applicationCategory": "MultimediaApplication",
   "applicationSubCategory": "Digital audio workstation",
   "operatingSystem": "Windows 10+, macOS 11+, Linux",
-  "softwareVersion": "0.2.18.1",
+  "softwareVersion": "0.2.20.0",
+  "dateModified": "2026-10-31",
   "datePublished": "2024-01-01",
   "license": "https://www.gnu.org/licenses/gpl-3.0.html",
   "isAccessibleForFree": true,
@@ -90,7 +91,7 @@
     <div class="wrap hero-grid">
       <a class="pill" href="https://github.com/postmanpat-303/ChipWaveStudio/releases/latest" rel="noopener">
         <span class="dot" aria-hidden="true"></span>
-        <b>v0.2.18.1</b> released · free &amp; open source
+        <b>v0.2.20.0</b> released · free &amp; open source
       </a>
 
       <h1>A <span class="grad">free music sequencer</span> with a retro heart.</h1>
@@ -134,46 +135,85 @@
   <section id="new">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="kicker">New in 0.2.18</span>
-        <h2>The Arp, and a loop you can shape.</h2>
-        <p>An arpeggiator that plays the notes you hold, a loop range you can drag by either end, and Ctrl+drag to copy a clip while the original stays put. There is a new demo song too, and 0.2.18.1 is the download.</p>
+        <span class="kicker">New in 0.2.20</span>
+        <h2>Text that fits, and modulation you can see.</h2>
+        <p>0.2.20.0 fixes text that overlapped or was cut off, starting with the Arp card's header in the Rack, and makes the modulation markers on knobs easy to see in every theme and knob style. Songs open, play and render exactly as in 0.2.19.0.</p>
       </div>
 
       <div class="new-grid">
         <article class="card reveal">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 17h4v-6h4V5h4v5h4v7h2"/><path d="M3 21h18"/></svg>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 10h6M7 14h10"/><path d="M17 8.5v3"/></svg>
           <span class="tag">The Arp</span>
-          <h3>Play what you hold</h3>
-          <p>A note effect at the front of a track's Rack. Up, Down, Converge, Diverge, Random and more; one to four octaves; rates from 1/4 to 1/128; and a step grid of 8, 16 or 32 steps for gate, ratchets, transpose and chance. Bake it to notes when you like it.</p>
+          <h3>A header that fits</h3>
+          <p>In the Rack at 1366×768 and narrower, <b>Simple</b> and <b>Steps</b> were cut off under <b>Preset ▾</b> and <b>More</b>. The card now measures its header in the real font, Text size and UI scale, so nothing overlaps and the text stays full size.</p>
         </article>
         <article class="card reveal">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12a8 8 0 018-8h6"/><path d="M15 1l3 3-3 3"/><path d="M20 12a8 8 0 01-8 8H6"/><path d="M9 23l-3-3 3-3"/></svg>
-          <span class="tag">Timeline</span>
-          <h3>A loop you can drag</h3>
-          <p>Grab either end of the loop on the ruler to resize it, or drag the band between the ends to move it. It snaps to the grid, Alt for single rows, and a double-click on the band selects the clips inside. Each change is one Undo step.</p>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7V4h3M21 7V4h-3M3 17v3h3M21 17v3h-3"/><path d="M7 12h10"/><path d="M14.5 9.5L17 12l-2.5 2.5M9.5 9.5L7 12l2.5 2.5"/></svg>
+          <span class="tag">Everywhere</span>
+          <h3>Names that end in “…”</h3>
+          <p>Timeline markers on the same beat share one label, and marker, clip and scene names end in “…” instead of being cut mid-letter. Automation scale labels, the Arranger's role badge, the Browser hint, the FM picture and the instrument cards' choice rows all fit too.</p>
         </article>
         <article class="card reveal">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="10" height="7" rx="1.5"/><rect x="14" y="13" width="7" height="7" rx="1.5"/><path d="M13 7.5h4m0 0l-2-2m2 2l-2 2"/></svg>
-          <span class="tag">Clips</span>
-          <h3>Ctrl+drag copies</h3>
-          <p>Hold <kbd>Ctrl</kbd> and drag a clip, or a whole selection: the copies follow the mouse and the originals stay where they were. They are independent, snap like a move, and one Undo takes them away.</p>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="13" r="6"/><path d="M12 13l3-3"/><path d="M5.3 8.5A8 8 0 0118.7 8.5"/><circle cx="19.5" cy="4.5" r="1.6" fill="currentColor"/></svg>
+          <span class="tag">Modulation</span>
+          <h3>Markers you can see</h3>
+          <p>The M1–M8 badges and the slot dot on knobs use the theme's accent colour at a contrast of at least 4.5:1. The dot is filled once a modulation is assigned, and the rings and depth bars are thicker and brighter in all six knob styles.</p>
         </article>
       </div>
 
-      <p class="fix-note reveal"><b>0.2.18.1 is the download.</b> It fixes a Windows installer problem in 0.2.18.0 where reinstalling or upgrading could leave the install folder empty. If 0.2.18.0 stopped opening from its shortcut, install this one; the app itself is the same.</p>
-
-      <div class="new-showcase">
-        <figure class="reveal new-showcase-wide">
-          <img src="/assets/shots/arp-1600.webp" width="1600" height="900" loading="lazy" decoding="async"
-               alt="The Arp open on the Rack: mode Up, two octaves, rate 1/16, gate 80% and swing 0%, with a 32-step grid showing velocity bars, gate lengths, accents, rests, ratchets and transposes.">
-          <figcaption>The Arp: 32 steps of velocity, gate, accent, ratchet and transpose</figcaption>
+      <div class="new-showcase new-showcase--pair">
+        <figure class="reveal">
+          <img src="/assets/shots/mod-markers.webp" width="1294" height="609" loading="lazy" decoding="async"
+               alt="Knobs with modulation in all six knob styles, before and after: after, the M badges and dots are in the accent colour, assigned dots are filled and the modulation rings are thicker and brighter.">
+          <figcaption>Modulation markers in all six knob styles: before and after</figcaption>
         </figure>
-        <figure class="reveal new-showcase-narrow">
-          <img src="/assets/shots/ctrl-copy-1600.webp" width="1600" height="900" loading="lazy" decoding="async"
-               alt="The Timeline during a Ctrl+drag: a copy of the bass clip follows the mouse with a + copy badge, the original still at bar 1, and the loop band stretching from bar 5 to 8.">
-          <figcaption>Ctrl+drag: the copy follows, the original stays</figcaption>
+        <figure class="reveal">
+          <img src="/assets/shots/arp-header.webp" width="972" height="484" loading="lazy" decoding="async"
+               alt="The Arp card header in the Rack at 1366 by 768, before and after: before, Simple is cut off under Preset; after, ARP, Simple, Steps, Preset and More all fit.">
+          <figcaption>The Arp card header at 1366×768: before and after</figcaption>
         </figure>
       </div>
+
+      <div class="section-head section-head--sub reveal">
+        <span class="kicker">New in 0.2.19</span>
+        <h3>A top bar you can rearrange, The Matrix and six knob styles.</h3>
+      </div>
+
+      <div class="new-grid">
+        <article class="card reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="6" width="6" height="7" rx="1"/><rect x="9" y="6" width="6" height="7" rx="1"/><rect x="16" y="6" width="6" height="7" rx="1"/><path d="M8 18h8m0 0l-2-2m2 2l-2 2"/></svg>
+          <span class="tag">Top bar</span>
+          <h3>Drag the panels</h3>
+          <p>The top bar is three panels: the Display, the Transport and the Master. Drag one by its grip to put them in the order you like; the middle one sits in the centre of the window. <b>Settings › Look › Top bar</b> shows the order and can reset it.</p>
+        </article>
+        <article class="card reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 7v3M8 13v4M12 6v6M12 15v2M16 8v2M16 13v5"/></svg>
+          <span class="tag">Theme</span>
+          <h3>The Matrix</h3>
+          <p>Phosphor green on near-black, in <b>Settings › Look</b>. Clips keep their track colours, so a busy arrangement stays easy to read.</p>
+        </article>
+        <article class="card reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="8" r="4"/><path d="M7 8V5"/><circle cx="17" cy="8" r="4"/><path d="M17 8l2-2"/><circle cx="7" cy="18" r="3"/><circle cx="17" cy="18" r="3"/><path d="M17 18v-3M7 18H4"/></svg>
+          <span class="tag">Knobs</span>
+          <h3>Six knob styles</h3>
+          <p>Pick how every knob in the app looks: Classic (each theme's own knob), Flat ring, Chicken-head, LED ring, Brushed metal or Pixel. Each choice shows a small live knob in the current theme's colours before you click.</p>
+        </article>
+      </div>
+
+      <div class="new-showcase new-showcase--pair">
+        <figure class="reveal">
+          <img src="/assets/shots/topbar-1600.webp" width="1600" height="833" loading="lazy" decoding="async"
+               alt="ChipWave in the Slate theme at 1920 pixels wide: the top bar with the Display on the left, the Transport centred and the Master on the right, all the same height, over the Timeline and a synth in the Rack.">
+          <figcaption>Display, Transport (centred) and Master: drag a panel by its grip</figcaption>
+        </figure>
+        <figure class="reveal">
+          <img src="/assets/shots/matrix-timeline-1366.webp" width="1366" height="768" loading="lazy" decoding="async"
+               alt="The Matrix theme: ChipWave's studio in phosphor green on near-black, with the WaveForge synth open in teal in the lower panel.">
+          <figcaption>The Matrix theme</figcaption>
+        </figure>
+      </div>
+
+      <p class="fix-note reveal"><b>Still new from 0.2.18:</b> the Arp, a note effect that plays the notes you hold with a step grid of up to 32 steps; a loop range you drag by either end; and <kbd>Ctrl</kbd>+drag to copy clips while the originals stay put. All of it is in the <a href="https://github.com/postmanpat-303/ChipWaveStudio/blob/main/docs/CHANGELOG.md" rel="noopener">changelog</a> and the manual.</p>
     </div>
   </section>
 
@@ -396,9 +436,9 @@
   <section id="themes">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="kicker">Three looks</span>
-        <h2>Slate, Dark Circuit, or a workbench from 1986.</h2>
-        <p>Three themes, switched in View › Theme or Settings › Look. <strong>Slate</strong> is the default — the Ember skin on slate grey. <strong>Dark Circuit</strong> is the night-time studio. <strong>Amiga</strong> is the light Workbench look with blue headers and an orange cursor, for people who miss their A500.</p>
+        <span class="kicker">Four looks</span>
+        <h2>Slate, Dark Circuit, The Matrix, or a workbench from 1986.</h2>
+        <p>Four themes, switched in View › Theme or Settings › Look. <strong>Slate</strong> is the default — the Ember skin on slate grey. <strong>Dark Circuit</strong> is the night-time studio. <strong>The Matrix</strong> is phosphor green on near-black. <strong>Amiga</strong> is the light Workbench look with blue headers and an orange cursor, for people who miss their A500.</p>
       </div>
 
       <figure class="theme-row reveal">
@@ -420,10 +460,16 @@
                data-caption="Amiga (Workbench Gradient): blue headers, orange cursor.">
           <figcaption>Amiga</figcaption>
         </figure>
+        <figure>
+          <img src="/assets/shots/matrix-timeline-1366.webp" width="1366" height="768" loading="lazy" decoding="async"
+               alt="The Matrix theme: phosphor green panels on near-black, with the WaveForge synth open in the lower panel."
+               data-caption="The Matrix: phosphor green on near-black.">
+          <figcaption>The Matrix</figcaption>
+        </figure>
       </figure>
 
       <div class="theme-notes reveal">
-        <p>Every theme keeps the same layout, keys and shortcuts, so switching never moves anything. There is also a UI scale in 25 % steps (<kbd>Ctrl</kbd>+<kbd>=</kbd> / <kbd>Ctrl</kbd>+<kbd>-</kbd>) and a text size setting for tired eyes and small laptops.</p>
+        <p>Every theme keeps the same layout, keys and shortcuts, so switching never moves anything. <b>Settings › Look</b> also has six knob styles that work with every theme, a UI scale in 25 % steps (<kbd>Ctrl</kbd>+<kbd>=</kbd> / <kbd>Ctrl</kbd>+<kbd>-</kbd>) and a text size setting for tired eyes and small laptops.</p>
       </div>
     </div>
   </section>
@@ -473,6 +519,14 @@
           <img src="/assets/shots/amiga-mixer-800.webp" width="800" height="450" loading="lazy" decoding="async" alt="The mixer in the Amiga theme.">
           <span>Mixer, Amiga</span>
         </button>
+        <button type="button" data-full="/assets/shots/arp-1600.webp" data-caption="The Arp on the Rack: 32 steps of velocity, gate, accent, ratchet and transpose.">
+          <img src="/assets/shots/arp-800.webp" width="800" height="450" loading="lazy" decoding="async" alt="The Arp open on the Rack with its 32-step grid.">
+          <span>The Arp</span>
+        </button>
+        <button type="button" data-full="/assets/shots/ctrl-copy-1600.webp" data-caption="Ctrl+drag: the copy follows the mouse, the original stays where it was.">
+          <img src="/assets/shots/ctrl-copy-800.webp" width="800" height="450" loading="lazy" decoding="async" alt="A clip being copied with Ctrl+drag on the Timeline.">
+          <span>Ctrl+drag copy</span>
+        </button>
         <button type="button" data-full="/assets/shots/browser-1600.webp" data-caption="The Browser: instruments, plugins, samples, songs and presets in one searchable panel.">
           <img src="/assets/shots/browser-800.webp" width="800" height="450" loading="lazy" decoding="async" alt="The Browser panel docked beside the Timeline.">
           <span>Browser</span>
@@ -485,23 +539,29 @@
     <div class="wrap">
       <div class="section-head reveal">
         <span class="kicker">Watch</span>
-        <h2>Thirty-one seconds, sound on.</h2>
-        <p>The promo, played here from this site rather than an advertising network: clips, drums, synths and a finished mix. The channel has the latest promo, the vertical short, and longer demos of the built-in songs.</p>
+        <h2>A minute of what's new, sound on.</h2>
+        <p>The 0.2.20.0 promo and its vertical Short: the movable top bar, The Matrix theme, the knob styles and the Arp. Nothing loads from YouTube until you press play; the channel has longer demos of the built-in songs too.</p>
       </div>
 
-      <div class="video reveal">
-        <video id="promo" controls preload="none" playsinline width="1920" height="1080"
-               poster="/assets/shots/promo-960.webp">
-          <source src="/assets/video/chipwave-promo.mp4" type="video/mp4">
-          <p>Your browser cannot play this video.
-             <a href="https://youtu.be/j1w23Pkuodg">Watch the promo on YouTube</a>.</p>
-        </video>
+      <div class="watch-grid reveal">
+        <a class="video yt" href="https://youtu.be/tWuAjS5rmDY" data-yt="tWuAjS5rmDY" rel="noopener"
+           aria-label="Play the ChipWave Studio 0.2.20.0 promo (YouTube, 1 minute 8 seconds)">
+          <img src="/assets/shots/promo-0220-960.webp" width="960" height="540" loading="lazy" decoding="async"
+               alt="ChipWave Studio v0.2.20.0, what's new: the title card over the app, with the Arp's step grid.">
+          <span class="yt-play" aria-hidden="true"><svg viewBox="0 0 68 48"><path d="M66.5 7.7c-.8-2.9-3-5.2-5.9-6C55.3.2 34 .2 34 .2s-21.3 0-26.6 1.5c-2.9.8-5.1 3.1-5.9 6C0 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 3 5.2 5.9 6C12.7 47.8 34 47.8 34 47.8s21.3 0 26.6-1.5c2.9-.8 5.1-3.1 5.9-6C68 35 68 24 68 24s0-11-1.5-16.3z" fill="#e00"/><path d="M27 34l18-10-18-10z" fill="#fff"/></svg></span>
+        </a>
+        <a class="video video--short yt" href="https://youtube.com/shorts/9mD4wTHEJ1k" data-yt="9mD4wTHEJ1k" rel="noopener"
+           aria-label="Play the ChipWave Studio 0.2.20.0 Short (YouTube, 36 seconds)">
+          <img src="/assets/shots/short-0220-540.webp" width="540" height="960" loading="lazy" decoding="async"
+               alt="The vertical Short: ChipWave's instrument list in The Matrix theme, captioned The Matrix theme, phosphor green.">
+          <span class="yt-play" aria-hidden="true"><svg viewBox="0 0 68 48"><path d="M66.5 7.7c-.8-2.9-3-5.2-5.9-6C55.3.2 34 .2 34 .2s-21.3 0-26.6 1.5c-2.9.8-5.1 3.1-5.9 6C0 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 3 5.2 5.9 6C12.7 47.8 34 47.8 34 47.8s21.3 0 26.6-1.5c2.9-.8 5.1-3.1 5.9-6C68 35 68 24 68 24s0-11-1.5-16.3z" fill="#e00"/><path d="M27 34l18-10-18-10z" fill="#fff"/></svg></span>
+        </a>
       </div>
 
       <p class="hero-note" style="margin-top:14px">
         Also on <a href="https://www.youtube.com/@whatgoesaround1551" rel="noopener">YouTube: @whatgoesaround1551</a> ·
-        <a href="https://youtu.be/j1w23Pkuodg" rel="noopener">the promo</a> ·
-        <a href="https://youtu.be/4sbt7f9bIdw" rel="noopener">the vertical short</a>
+        <a href="https://youtu.be/tWuAjS5rmDY" rel="noopener">the promo</a> ·
+        <a href="https://youtube.com/shorts/9mD4wTHEJ1k" rel="noopener">the Short</a>
       </p>
     </div>
   </section>
@@ -511,7 +571,7 @@
       <div class="section-head reveal">
         <span class="kicker">Download</span>
         <h2>Free, and free of strings.</h2>
-        <p>Version 0.2.18.1, for 64-bit Windows, Intel and Apple Silicon Macs. Linux builds from source. The same download links always fetch the newest release.</p>
+        <p>Version 0.2.20.0, for 64-bit Windows, Intel and Apple Silicon Macs. Linux builds from source. The same download links always fetch the newest release.</p>
       </div>
 
       <div class="dl-grid">
@@ -520,12 +580,12 @@
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.5l7.5-1v7H3zM12 4.3L21 3v8.5h-9zM3 12.5h7.5v7L3 18.5zM12 12.5h9V21l-9-1.3z"/></svg>
             <h3>Windows</h3>
           </div>
-          <p class="meta">64-bit · installer · 12.0 MB</p>
+          <p class="meta">64-bit · installer · 12.5 MB</p>
           <a class="btn btn--primary" href="https://github.com/postmanpat-303/ChipWaveStudio/releases/latest/download/ChipWave-setup-x64.exe" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
             Download installer
           </a>
-          <small>Or the portable <a href="https://github.com/postmanpat-303/ChipWaveStudio/releases/latest/download/ChipWave-windows-x64.zip" rel="noopener">ZIP, 14.9 MB</a>. Not code-signed yet: if SmartScreen appears, choose “More info” then “Run anyway”.</small>
+          <small>Or the portable <a href="https://github.com/postmanpat-303/ChipWaveStudio/releases/latest/download/ChipWave-windows-x64.zip" rel="noopener">ZIP, 15.4 MB</a>. Not code-signed yet: if SmartScreen appears, choose “More info” then “Run anyway”.</small>
         </div>
 
         <div class="dl">
@@ -533,12 +593,12 @@
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.3 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.9-1.4-.1-2.8.9-3.5.9s-1.8-.9-3-.8c-1.5 0-2.9.9-3.7 2.2-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.7 2.3 2.9 2.2 1.2 0 1.6-.7 3-.7s1.8.7 3 .7 2-1.1 2.8-2.2c.9-1.3 1.3-2.5 1.3-2.6 0 0-2.5-1-2.5-3.3zM14.2 5.3c.6-.8 1.1-1.9 1-3-1 0-2.1.6-2.8 1.4-.6.7-1.1 1.9-1 3 1 .1 2.1-.5 2.8-1.4z"/></svg>
             <h3>macOS</h3>
           </div>
-          <p class="meta">Universal · Apple Silicon + Intel · 33.3 MB</p>
+          <p class="meta">Universal · Apple Silicon + Intel · 34.2 MB</p>
           <a class="btn" href="https://github.com/postmanpat-303/ChipWaveStudio/releases/latest/download/ChipWave-macos-universal.dmg" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
             Download DMG
           </a>
-          <small>macOS 11 or later, not notarised: first launch with Control-click → <b>Open</b>. Or the <a href="https://github.com/postmanpat-303/ChipWaveStudio/releases/latest/download/ChipWave-macos-universal.zip" rel="noopener">ZIP, 29.9 MB</a>.</small>
+          <small>macOS 11 or later, not notarised: first launch with Control-click → <b>Open</b>. Or the <a href="https://github.com/postmanpat-303/ChipWaveStudio/releases/latest/download/ChipWave-macos-universal.zip" rel="noopener">ZIP, 30.9 MB</a>.</small>
         </div>
 
         <div class="dl">
@@ -590,14 +650,14 @@
     <div class="wrap">
       <div class="section-head reveal">
         <span class="kicker">The manual</span>
-        <h2>Thirty-eight pages, from first launch to final mix.</h2>
-        <p>A proper handbook for 0.2.18.1, written for this version and laid out chapter by chapter, with real pictures of the screens. Read it here in the browser, or download the PDF and keep it beside the app.</p>
+        <h2>Forty pages, from first launch to final mix.</h2>
+        <p>A proper handbook for 0.2.20.0, written for this version and laid out chapter by chapter, with real pictures of the screens. Read it here in the browser, or download the PDF and keep it beside the app.</p>
       </div>
 
       <div class="manual reveal">
         <a class="manual-cover" href="/manual/" aria-label="Read the ChipWave Studio user manual">
           <img src="/assets/manual-cover-800.webp" width="800" height="1132" loading="lazy" decoding="async"
-               alt="Cover of the ChipWave Studio 0.2.18.1 user manual: the blue cicada app icon on a dark grid, the title, the version and a waveform.">
+               alt="Cover of the ChipWave Studio 0.2.20.0 user manual: the blue cicada app icon on a dark grid, the title, the version and a waveform.">
         </a>
 
         <div class="manual-copy">
@@ -609,11 +669,12 @@
             <li>The Tracker, for the old way of working</li>
             <li>Instruments, generators, racks and effects</li>
             <li>The mixer with its limiter, and exporting your song</li>
+            <li>Settings: themes, knob styles and the movable top bar</li>
           </ul>
-          <p class="manual-meta">38 pages &middot; PDF &middot; 4.6 MB &middot; version 0.2.18.1</p>
+          <p class="manual-meta">40 pages &middot; PDF &middot; 5.1 MB &middot; version 0.2.20.0</p>
           <div class="manual-actions">
             <a class="btn btn--primary" href="/manual/">Read it here</a>
-            <a class="btn" href="/manual/ChipWave-Studio-User-Manual-0.2.18.1.pdf" download>Download the PDF</a>
+            <a class="btn" href="/manual/ChipWave-Studio-User-Manual-0.2.20.0.pdf" download>Download the PDF</a>
           </div>
           <p class="manual-note">It is built into the app as well, under <b>Help › User Manual</b>. In the browser it opens in your own PDF reader; keep the download and it works offline, which is handy while you learn the app.</p>
         </div>
@@ -716,7 +777,7 @@
 
     <div class="footer-base">
       <span>© <span id="year">2026</span> Del (postmanpat) · ChipWave Studio is free software under the GPL-3.0-or-later</span>
-      <span>Pictures are real captures of version 0.2.18.1 · chipwavestudio.com</span>
+      <span>Pictures are real captures of the app · chipwavestudio.com</span>
     </div>
   </div>
 </footer>

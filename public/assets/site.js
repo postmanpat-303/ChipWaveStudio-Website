@@ -149,4 +149,22 @@
     if (a.target !== "_blank") a.target = "_blank";
     a.setAttribute("rel", "noopener noreferrer");
   });
+
+  /* ---------- YouTube: a local poster until play is pressed ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll("a.yt[data-yt]"), function (a) {
+    a.addEventListener("click", function (e) {
+      if (e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return;
+      e.preventDefault();
+      var f = document.createElement("iframe");
+      f.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(a.getAttribute("data-yt")) + "?autoplay=1&rel=0";
+      f.title = a.getAttribute("aria-label") || "YouTube video";
+      f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+      f.allowFullscreen = true;
+      f.referrerPolicy = "strict-origin-when-cross-origin";
+      var box = document.createElement("div");
+      box.className = a.className;
+      box.appendChild(f);
+      a.replaceWith(box);
+    });
+  });
 })();
