@@ -1,58 +1,38 @@
-/* extra styles for the manual reader page, on top of site.css */
 body.reader {
   height: 100vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background: var(--bg);
+  background: #f3ead7;
+  color: #1c1915;
 }
-
 .reader-bar {
   display: flex;
   align-items: center;
   gap: 16px;
   padding: 10px clamp(14px, 3vw, 24px);
-  border-bottom: 1px solid var(--edge-soft);
-  background: rgba(7, 11, 28, 0.96);
+  border-bottom: 2px solid #1c1915;
+  background: #f7f1e6;
   flex: none;
 }
-.reader-bar .brand img { height: 30px; width: auto; }
-.reader-bar .brand span { font-size: 0.76rem; }
-.reader-actions {
-  margin-left: auto;
+.reader-bar .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  text-decoration: none;
+  color: #1c1915;
+  font-family: Syne, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
-.reader-meta {
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  color: var(--dim-2);
-  white-space: nowrap;
-}
-.reader-frame {
-  flex: 1;
-  min-height: 0;
-  position: relative;
-  background: #0a1020;
-}
-.reader-frame iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-.reader-hint {
-  display: none;
-  padding: 14px clamp(14px, 3vw, 24px);
-  border-bottom: 1px solid var(--edge-soft);
-  font-size: 0.9rem;
-  color: var(--dim);
-  background: rgba(12, 19, 46, 0.9);
-}
-
+.reader-bar .brand img { height: 30px; width: auto; filter: brightness(0); }
+.reader-actions { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+.reader-meta { font-family: "Atkinson Hyperlegible Mono", ui-monospace, monospace; font-size: 12px; color: #3f3a33; }
+.reader-frame { flex: 1; min-height: 0; background: #e7e0d2; }
+.reader-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+.reader-hint { display: none; padding: 12px 16px; border-bottom: 1px solid #d9d3c8; font-size: 15px; background: #fff; }
 @media (max-width: 760px) {
   .reader-meta { display: none; }
   .reader-hint { display: block; }
-  .reader-bar .btn--ghost { display: none; }
+  .reader-bar .btn.alt { display: none; }
 }

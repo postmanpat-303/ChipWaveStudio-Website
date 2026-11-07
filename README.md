@@ -87,6 +87,10 @@ stops it.
 - The Linux 0.2.21.0 “one menu, eight places” block is only that build (Rack, automation lanes,
   and Save / Export). Windows and Mac 0.2.20.0 do not have it. The 0.2.20 and 0.2.19 sections stay.
   The on-site manual is still the 0.2.20.0 PDF.
+- The page is one scroll in the option B graphic language. The opening is a 1960s-style poster;
+  later sections shift in colour and shape (warm curves, synth geometry, 90s editorial, cool chrome,
+  then a quiet luminous close). That is page design, not a claim about when ChipWave was made.
+  Syne (OFL) is the display face; Atkinson stays the body face.
 - Every claim on the page comes from the app's README, docs and source
   (the themes, for example, are `SLATE`, `DARK` and `AMIGA` in `src/theme.rs` —
   Slate is the default, and the page used to say there were only two).
