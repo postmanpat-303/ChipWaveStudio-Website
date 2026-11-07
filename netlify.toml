@@ -37,13 +37,13 @@
 
 [[redirects]]
   from = "/download/windows"
-  to = "https://github.com/postmanpat-303/ChipWaveStudio/releases/download/v0.2.20.0/ChipWave-setup-x64.exe"
+  to = "https://github.com/postmanpat-303/ChipWaveStudio/releases/download/v0.2.21.0/ChipWave-setup-x64.exe"
   status = 302
   force = true
 
 [[redirects]]
   from = "/download/macos"
-  to = "https://github.com/postmanpat-303/ChipWaveStudio/releases/download/v0.2.20.0/ChipWave-macos-universal.dmg"
+  to = "https://github.com/postmanpat-303/ChipWaveStudio/releases/download/v0.2.21.0/ChipWave-macos-universal.dmg"
   status = 302
   force = true
 
