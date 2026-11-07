@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proposal B — ChipWave Studio step desk</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../public/assets/icon-32.png">
+<style>
+@font-face { font-family: "Syne"; src: url("../fonts/syne-500.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Syne"; src: url("../fonts/syne-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Atkinson"; src: url("../../public/assets/fonts/AtkinsonHyperlegibleNext-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Atkinson"; src: url("../../public/assets/fonts/AtkinsonHyperlegibleNext-SemiBold.ttf") format("truetype"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Atkinson Mono"; src: url("../../public/assets/fonts/AtkinsonHyperlegibleMono-Medium.ttf") format("truetype"); font-weight: 500; font-style: normal; font-display: swap; }
+
+:root {
+  --paper: #f4efe4;
+  --ink: #1c1915;
+  --muted: #4a453c;
+  --clay: #9a3412;
+  --led: #1d6b45;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Atkinson", "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.45;
+}
+a { color: inherit; }
+a:focus-visible { outline: 3px solid var(--clay); outline-offset: 2px; }
+img { max-width: 100%; height: auto; display: block; }
+
+.flag {
+  margin: 0;
+  padding: 7px 16px 7px 72px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: "Atkinson Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.desk { display: grid; grid-template-columns: 56px minmax(0, 1fr); min-height: 100vh; }
+.rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 16px 0;
+  border-right: 2px solid var(--ink);
+}
+.rail span {
+  width: 11px;
+  height: 11px;
+  border: 2px solid var(--ink);
+  background: transparent;
+}
+.rail span.on { background: var(--ink); }
+.rail span.led { background: var(--led); border-color: var(--led); }
+
+.main { min-width: 0; }
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  padding: 16px 22px 12px;
+  border-bottom: 2px solid var(--ink);
+}
+.word {
+  margin: 0;
+  font-family: "Syne", "Arial Black", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+}
+.nav { display: flex; flex-wrap: wrap; gap: 8px; }
+.nav a {
+  text-decoration: none;
+  border: 2px solid var(--ink);
+  padding: 6px 10px;
+  font-size: 14px;
+  background: var(--paper);
+}
+.nav a:hover { background: var(--ink); color: var(--paper); }
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(280px, 1.05fr);
+  gap: 22px;
+  padding: 22px 22px 8px;
+  align-items: start;
+}
+.stamp {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 4px 8px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: "Atkinson Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+h1 {
+  margin: 0;
+  font-family: "Syne", "Arial Black", sans-serif;
+  font-weight: 700;
+  font-size: clamp(52px, 6vw, 78px);
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+}
+.lede { margin: 14px 0 0; max-width: 36ch; font-size: 17px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.chip {
+  border: 2px solid var(--ink);
+  padding: 6px 8px;
+  font-family: "Atkinson Mono", ui-monospace, monospace;
+  font-size: 12px;
+  background: #fffaf3;
+}
+.chip b { display: block; font-family: "Syne", sans-serif; font-size: 14px; letter-spacing: 0; }
+.chip.now { background: #e7f5ec; }
+
+.shot { margin: 8px 20px 0 0; }
+.frame {
+  border: 2px solid var(--ink);
+  box-shadow: 12px 12px 0 var(--ink);
+  background: #fff;
+}
+.shot figcaption { margin: 22px 0 0; font-size: 14px; color: var(--muted); }
+
+.steps { padding: 18px 22px 28px; display: grid; gap: 12px; }
+.step {
+  display: grid;
+  grid-template-columns: 18px 120px 92px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  border: 2px solid var(--ink);
+  background: #fffaf3;
+  padding: 12px 14px;
+}
+.step:nth-child(2) { margin-left: 28px; }
+.step:nth-child(3) { margin-left: 56px; background: #fff; }
+.sq { width: 14px; height: 14px; background: var(--ink); }
+.step:nth-child(3) .sq { background: var(--led); }
+.step h2 { margin: 0; font-family: "Syne", sans-serif; font-size: 22px; letter-spacing: -0.03em; }
+.step .ver { font-family: "Atkinson Mono", ui-monospace, monospace; font-size: 13px; color: var(--clay); }
+.step p { margin: 0 0 8px; font-size: 15px; color: var(--muted); }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 6px 12px;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+}
+.btn:hover { background: var(--clay); }
+.alt { font-size: 15px; color: var(--ink); text-underline-offset: 3px; }
+.note {
+  margin: 4px 0 0 56px;
+  max-width: 78ch;
+  font-size: 15px;
+  color: var(--ink);
+}
+.links { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 8px 0 0; font-size: 14px; }
+.links a { color: var(--clay); }
+
+@media (max-width: 860px) {
+  .flag { padding-left: 16px; }
+  .desk { grid-template-columns: 1fr; }
+  .rail { flex-direction: row; border-right: 0; border-bottom: 2px solid var(--ink); padding: 10px 12px; overflow: hidden; }
+  .top { padding: 12px; align-items: flex-start; flex-direction: column; }
+  .hero, .steps { padding: 14px 12px; }
+  .hero { grid-template-columns: 1fr; }
+  .shot { margin: 8px 12px 0 0; }
+  .frame { box-shadow: 8px 8px 0 var(--ink); }
+  .frame img { height: 210px; width: 100%; object-fit: cover; object-position: center 18%; }
+  .step, .step:nth-child(2), .step:nth-child(3) { grid-template-columns: 14px 1fr; margin-left: 0; }
+  .step h2, .step .ver { grid-column: 2; }
+  .step .body { grid-column: 1 / -1; }
+  .note { margin-left: 0; }
+  h1 { font-size: 56px; }
+}
+</style>
+</head>
+<body>
+<p class="flag">Proposal B · mockup, not the live site</p>
+<div class="desk">
+  <div class="rail" aria-hidden="true">
+    <span class="on"></span><span class="on"></span><span></span><span></span>
+    <span class="led"></span><span class="on"></span><span></span><span></span>
+    <span class="on"></span><span></span><span class="led"></span><span></span>
+    <span class="on"></span><span class="on"></span><span></span><span></span>
+  </div>
+  <div class="main">
+    <header class="top">
+      <a class="word" href="#top">CHIPWAVE</a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#download">Download</a>
+        <a href="https://chipwavestudio.com/manual/">Manual</a>
+        <a href="https://youtu.be/tWuAjS5rmDY" rel="noopener">Watch</a>
+        <a href="https://github.com/postmanpat-303/ChipWaveStudio" rel="noopener">Source</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="top">
+      <div>
+        <p class="stamp">Free for Windows, Mac &amp; Linux</p>
+        <h1>ChipWave Studio</h1>
+        <p class="lede">A free music sequencer. Timeline, piano roll, drum kit, and sounds you edit yourself. GPL-3.0, no account, no telemetry. Written by Del (postmanpat).</p>
+        <div class="chips" aria-label="Versions">
+          <p class="chip"><b>Windows</b>0.2.20.0</p>
+          <p class="chip"><b>Mac</b>0.2.20.0</p>
+          <p class="chip now"><b>Linux</b>0.2.21.0 · x86_64</p>
+        </div>
+      </div>
+      <figure class="shot">
+        <div class="frame">
+          <img src="../../public/assets/shots/timeline-1600.webp" width="1600" height="900" alt="ChipWave Studio's Timeline playing the built-in Oceans 11 demo, with the Clip Arranger and piano roll.">
+        </div>
+        <figcaption>Oceans 11, a real capture: clips, Clip Arranger, piano roll.</figcaption>
+      </figure>
+    </section>
+
+    <section class="steps" id="download">
+      <article class="step">
+        <span class="sq" aria-hidden="true"></span>
+        <h2>Windows</h2>
+        <p class="ver">0.2.20.0</p>
+        <div class="body">
+          <p>64-bit installer, 12.5 MB. Not code-signed. No Linux 0.2.21.0 menus in this build.</p>
+          <div class="actions">
+            <a class="btn" href="https://github.com/postmanpat-303/ChipWaveStudio/releases/download/v0.2.20.0/ChipWave-setup-x64.exe" rel="noopener">Download installer</a>
+            <a class="alt" href="https://github.com/postmanpat-303/ChipWaveStudio/releases/download/v0.2.20.0/ChipWave-windows-x64.zip" rel="noopener">ZIP, 15.4 MB</a>
+          </div>
+        </div>
+      </article>
+      <article class="step">
+        <span class="sq" aria-hidden="true"></span>
+        <h2>Mac</h2>
+        <p class="ver">0.2.20.0</p>
+        <div class="body">
+          <p>Universal DMG, 34.2 MB. macOS 11 or later. Control-click, then Open. No 0.2.21.0 Mac build.</p>
+          <div class="actions">
+            <a class="btn" href="https://github.com/postmanpat-303/ChipWaveStudio/releases/download/v0.2.20.0/ChipWave-macos-universal.dmg" rel="noopener">Download DMG</a>
+            <a class="alt" href="https://github.com/postmanpat-303/ChipWaveStudio/releases/download/v0.2.20.0/ChipWave-macos-universal.zip" rel="noopener">ZIP, 30.9 MB</a>
+          </div>
+        </div>
+      </article>
+      <article class="step">
+        <span class="sq" aria-hidden="true"></span>
+        <h2>Linux</h2>
+        <p class="ver">0.2.21.0</p>
+        <div class="body">
+          <p>x86_64 · glibc 2.35+ · Ubuntu 22.04 build. Unsigned. No Flatpak, Snap or ARM.</p>
+          <div class="actions">
+            <a class="btn" href="https://github.com/postmanpat-303/ChipWaveStudio/releases/download/linux-v0.2.21.0/chipwave-studio_0.2.21.0_amd64.deb" rel="noopener">.deb · 13.0 MB</a>
+            <a class="alt" href="https://github.com/postmanpat-303/ChipWaveStudio/releases/download/linux-v0.2.21.0/ChipWave-0.2.21.0-linux-x86_64.AppImage" rel="noopener">AppImage · 16.4 MB</a>
+            <a class="alt" href="https://github.com/postmanpat-303/ChipWaveStudio/releases/download/linux-v0.2.21.0/chipwave-studio-0.2.21.0-1.x86_64.rpm" rel="noopener">.rpm · 16.4 MB</a>
+            <a class="alt" href="https://github.com/postmanpat-303/ChipWaveStudio/releases/download/linux-v0.2.21.0/ChipWave-0.2.21.0-linux-x86_64.tar.gz" rel="noopener">tar.gz · 16.0 MB</a>
+          </div>
+        </div>
+      </article>
+      <p class="note">Only Linux 0.2.21.0 has the eight-place pie menu: track, clip, empty lane, Rack device, automation lane, or Song / Master. Save and Export are on the song title. Windows and Mac 0.2.20.0 do not. .deb checked on Ubuntu 22.04, 24.04 and Debian 12. .rpm on Fedora 41 and openSUSE Leap 15.6. AppImage needs FUSE, or <code>--appimage-extract</code> then <code>squashfs-root/AppRun</code>. It uses system ALSA, OpenGL and X11 or Wayland.</p>
+      <p class="links">
+        <a href="https://github.com/postmanpat-303/ChipWaveStudio/releases/download/v0.2.20.0/SHA256SUMS.txt" rel="noopener">Windows and Mac checksums</a>
+        <a href="https://github.com/postmanpat-303/ChipWaveStudio/releases/download/linux-v0.2.21.0/SHA256SUMS-linux-0.2.21.0.txt" rel="noopener">Linux checksums</a>
+        <a href="https://youtu.be/tWuAjS5rmDY" rel="noopener">Promo</a>
+        <a href="https://youtube.com/shorts/9mD4wTHEJ1k" rel="noopener">Short</a>
+        <a href="https://paypal.me/derekh100" rel="noopener">PayPal</a>
+        <a href="https://buymeacoffee.com/postmanpat" rel="noopener">Buy me a coffee</a>
+      </p>
+    </section>
+  </div>
+</div>
+</body>
+</html>
