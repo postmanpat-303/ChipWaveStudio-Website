@@ -75,17 +75,17 @@ stops it.
 
 ## Content notes
 
-- Current app version on the site is **0.2.21.0** for Windows, Mac and Linux.
-  Windows and Mac links are pinned to `releases/download/v0.2.21.0/`
-  (`ChipWave-setup-x64.exe`, `ChipWave-windows-x64.zip`, `ChipWave-macos-universal.dmg`,
-  `ChipWave-macos-universal.zip`, `SHA256SUMS.txt`). Sizes on the page are mebibytes, labelled MB.
-- Linux downloads are the same app version, pinned to the separate
-  [`linux-v0.2.21.0`](https://github.com/postmanpat-303/ChipWaveStudio/releases/tag/linux-v0.2.21.0)
-  assets: `ChipWave-0.2.21.0-linux-x86_64.AppImage`, `chipwave-studio_0.2.21.0_amd64.deb`,
-  `chipwave-studio-0.2.21.0-1.x86_64.rpm`, `ChipWave-0.2.21.0-linux-x86_64.tar.gz`
-  and `SHA256SUMS-linux-0.2.21.0.txt`. Do not point Linux at `releases/latest`.
-- The eight-place menu is in 0.2.21.0 on all three platforms. The 0.2.20 and 0.2.19
-  notes stay as earlier releases. The on-site manual is the 0.2.21.0 PDF.
+- Windows and Linux downloads are **0.2.22.0**, pinned to
+  [`v0.2.22.0`](https://github.com/postmanpat-303/ChipWaveStudio/releases/tag/v0.2.22.0):
+  `ChipWave-0.2.22.0-setup-x64.exe`, `ChipWave-0.2.22.0-windows-x64.zip`,
+  `chipwave-studio_0.2.22.0_amd64.deb`, `chipwave-studio-0.2.22.0-1.x86_64.rpm`,
+  `ChipWave-0.2.22.0-linux-x86_64.AppImage`, `ChipWave-0.2.22.0-linux-x86_64.tar.gz`,
+  and `SHA256SUMS-0.2.22.0.txt`. Do not point Linux at `releases/latest`.
+- The Mac download stays **0.2.21.0**, pinned to
+  `releases/download/v0.2.21.0/ChipWave-macos-universal.dmg` (and the matching zip and
+  `SHA256SUMS.txt`). A 0.2.22.0 Mac package is not published.
+- Acid Bass is in Windows and Linux 0.2.22.0 only. Credit OpenRB-338, pingw33n and the
+  OpenRB-338 authors, GPL-3.0-only. The on-site manual is still the 0.2.21.0 PDF.
   The promo and Short are still the 0.2.20.0 films.
 - The page is one scroll in the option B graphic language. The opening is a 1960s-style poster;
   later sections shift in colour and shape (warm curves, synth geometry, 90s editorial, cool chrome,
