@@ -405,6 +405,14 @@ code, kbd {
   color: inherit;
   font: inherit;
 }
+.gallery button:focus-visible,
+.feature-shot img:focus-visible,
+.marketing img:focus-visible,
+.theme-row img:focus-visible,
+.new-showcase img:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
 .gallery img { border-radius: 6px 6px 0 0; }
 .gallery span { display: block; padding: 6px 8px 8px; font-size: 13px; }
 .watch-grid { display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 16px; margin-top: 12px; align-items: start; }
@@ -521,7 +529,12 @@ code, kbd {
 }
 .lightbox.is-open { display: flex; }
 .lightbox img { max-width: min(1100px, 92vw); max-height: 78vh; width: auto; height: auto; }
-.lightbox-caption { color: #f7f1e6; text-align: center; max-width: 70ch; }
+.lightbox-caption {
+  color: #f7f1e6;
+  text-align: center;
+  max-width: min(70ch, 92vw);
+  margin: 10px auto 0;
+}
 .lb-btn {
   position: absolute;
   width: 44px;
