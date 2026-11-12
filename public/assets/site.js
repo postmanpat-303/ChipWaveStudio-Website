@@ -230,4 +230,197 @@
       a.replaceWith(box);
     });
   });
+
+  /* ---------- history presentation ---------- */
+  var deck = document.getElementById("history-deck");
+  if (deck) {
+    var slides = [
+      ["Making music on computers", "/assets/history/s-01.webp"],
+      ["Computers sang before trackers", "/assets/history/s-02.webp"],
+      ["1987, Ultimate Soundtracker", "/assets/history/s-03.webp"],
+      ["OctaMED squeezes eight channels out of four", "/assets/history/s-04.webp"],
+      ["The tracker explosion", "/assets/history/s-05.webp"],
+      ["The timeline replaces the pattern list", "/assets/history/s-06.webp"],
+      ["Chiptune: limitation becomes style", "/assets/history/s-07.webp"],
+      ["ChipWave Studio, a free studio with a retro heart", "/assets/history/s-08.webp"],
+      ["The old way is still in there", "/assets/history/s-09.webp"],
+      ["The pattern still scrolls", "/assets/history/s-10.webp"]
+    ];
+    var stage = document.getElementById("history-stage");
+    var layerA = document.getElementById("history-a");
+    var layerB = document.getElementById("history-b");
+    var startBtn = document.getElementById("history-start");
+    var toggleBtn = document.getElementById("history-toggle");
+    var prevBtn = document.getElementById("history-prev");
+    var nextBtn = document.getElementById("history-next");
+    var fullBtn = document.getElementById("history-full");
+    var countEl = document.getElementById("history-count");
+    var liveEl = document.getElementById("history-live");
+    var dotsEl = document.getElementById("history-dots");
+    var front = layerA;
+    var back = layerB;
+    var slideIndex = 0;
+    var playing = false;
+    var timer = null;
+    var warmed = false;
+
+    slides.forEach(function (slide, i) {
+      var dot = document.createElement("button");
+      dot.type = "button";
+      dot.setAttribute("aria-label", "Slide " + (i + 1) + " of " + slides.length + ", " + slide[0]);
+      if (i === 0) dot.setAttribute("aria-current", "true");
+      dot.addEventListener("click", function () { warm(); go(i); });
+      dotsEl.appendChild(dot);
+    });
+
+    function warm() {
+      if (warmed) return;
+      warmed = true;
+      slides.forEach(function (slide) {
+        var im = new Image();
+        im.src = slide[1];
+      });
+    }
+
+    function dismissPoster() {
+      if (startBtn.hidden) return;
+      var restore = document.activeElement === startBtn;
+      startBtn.hidden = true;
+      if (restore) stage.focus({ preventScroll: true });
+    }
+
+    function paint(announce) {
+      var label = "Slide " + (slideIndex + 1) + " of " + slides.length + ", " + slides[slideIndex][0];
+      countEl.textContent = (slideIndex + 1) + " / " + slides.length;
+      if (announce && liveEl) liveEl.textContent = label;
+      Array.prototype.forEach.call(dotsEl.children, function (dot, i) {
+        if (i === slideIndex) dot.setAttribute("aria-current", "true");
+        else dot.removeAttribute("aria-current");
+      });
+      toggleBtn.textContent = playing ? "Pause" : "Play";
+      toggleBtn.setAttribute("aria-pressed", playing ? "true" : "false");
+      toggleBtn.setAttribute("aria-label", playing ? "Pause presentation" : "Play presentation");
+    }
+
+    function armTimer() {
+      clearInterval(timer);
+      timer = null;
+      if (!playing) return;
+      timer = setInterval(function () {
+        if (slideIndex >= slides.length - 1) pause();
+        else go(slideIndex + 1);
+      }, 8000);
+    }
+
+    function play() {
+      warm();
+      playing = true;
+      dismissPoster();
+      armTimer();
+      paint(true);
+    }
+
+    function pause() {
+      playing = false;
+      clearInterval(timer);
+      timer = null;
+      paint();
+    }
+
+    var loadToken = 0;
+    function go(next) {
+      var n = slides.length;
+      next = (next + n) % n;
+      if (next === slideIndex) {
+        armTimer();
+        return;
+      }
+      var slide = slides[next];
+      if (playing) {
+        clearInterval(timer);
+        timer = null;
+      }
+      var token = ++loadToken;
+      function reveal() {
+        if (token !== loadToken) return;
+        back.alt = slide[0];
+        back.removeAttribute("aria-hidden");
+        back.classList.add("is-show");
+        front.classList.remove("is-show");
+        front.setAttribute("aria-hidden", "true");
+        front.alt = "";
+        var swap = front;
+        front = back;
+        back = swap;
+        slideIndex = next;
+        dismissPoster();
+        armTimer();
+        paint(true);
+      }
+      if (back.getAttribute("src") === slide[1] && back.complete && back.naturalWidth) {
+        reveal();
+        return;
+      }
+      back.onload = function () {
+        back.onload = null;
+        reveal();
+      };
+      back.src = slide[1];
+    }
+
+    startBtn.addEventListener("click", function () {
+      play();
+      stage.focus({ preventScroll: true });
+    });
+    toggleBtn.addEventListener("click", function () { if (playing) pause(); else play(); });
+    prevBtn.addEventListener("click", function () { warm(); go(slideIndex - 1); });
+    nextBtn.addEventListener("click", function () { warm(); go(slideIndex + 1); });
+    fullBtn.addEventListener("click", function () {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+        return;
+      }
+      var request = deck.requestFullscreen && deck.requestFullscreen();
+      if (request && request.catch) request.catch(function () {});
+      stage.focus({ preventScroll: true });
+    });
+    document.addEventListener("fullscreenchange", function () {
+      var on = document.fullscreenElement === deck;
+      fullBtn.textContent = on ? "Exit" : "Fullscreen";
+      fullBtn.setAttribute("aria-label", on ? "Exit fullscreen" : "Enter fullscreen");
+    });
+
+    var touchX = 0;
+    var touchY = 0;
+    stage.addEventListener("touchstart", function (e) {
+      if (!e.changedTouches || !e.changedTouches.length) return;
+      touchX = e.changedTouches[0].clientX;
+      touchY = e.changedTouches[0].clientY;
+    }, { passive: true });
+    stage.addEventListener("touchend", function (e) {
+      if (!e.changedTouches || !e.changedTouches.length) return;
+      var dx = e.changedTouches[0].clientX - touchX;
+      var dy = e.changedTouches[0].clientY - touchY;
+      if (Math.abs(dx) < 48 || Math.abs(dx) < Math.abs(dy)) return;
+      warm();
+      go(slideIndex + (dx < 0 ? 1 : -1));
+    }, { passive: true });
+
+    deck.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { e.preventDefault(); warm(); go(slideIndex + 1); }
+      else if (e.key === "ArrowLeft") { e.preventDefault(); warm(); go(slideIndex - 1); }
+      else if (e.key === " " && e.target.tagName !== "BUTTON" && e.target.tagName !== "A") {
+        e.preventDefault();
+        if (playing) pause(); else play();
+      } else if (e.key === "Escape" && document.fullscreenElement === deck) {
+        document.exitFullscreen();
+      }
+    });
+
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden && playing) pause();
+    });
+
+    paint();
+  }
 })();
